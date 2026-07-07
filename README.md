@@ -1,4 +1,4 @@
-# android-bp-guid
+# android-bp-guide
 
 A centralized documentation repository for Android.bp and Soong Blueprint.
 
