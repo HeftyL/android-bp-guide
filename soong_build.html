@@ -1,0 +1,1443 @@
+
+<html>
+<head>
+<title>Build Docs</title>
+<style>
+#main {
+  padding: 48px;
+}
+
+table{
+  table-layout: fixed;
+}
+
+td {
+  word-wrap:break-word;
+}
+
+ 
+td,td code {
+    color: #202124
+}
+
+th,th code {
+    color: #fff;
+    font: 500 16px/24px Roboto,sans-serif
+}
+
+td,table.responsive tr:not(.alt) td td:first-child,table.responsive td tr:not(.alt) td:first-child {
+    background: rgba(255,255,255,.95);
+    vertical-align: top
+}
+
+td,td code {
+    padding: 7px 8px 8px
+}
+
+tr {
+    border: 0;
+    background: #78909c;
+    border-top: 1px solid #cfd8dc
+}
+
+th,td {
+    border: 0;
+    margin: 0;
+    text-align: left
+}
+
+th {
+    height: 48px;
+    padding: 8px;
+    vertical-align: middle
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 14px/20px Roboto,sans-serif;
+    margin: 16px 0;
+    width: 100%
+}
+
+h1 {
+    color: #80868b;
+    font: 300 34px/40px Roboto,sans-serif;
+    letter-spacing: -0.01em;
+    margin: 40px 0 20px
+}
+
+h1,h2,h3,h4,h5,h6 {
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis
+}
+
+:link,:visited {
+    color: #039be5;
+    outline: 0;
+    text-decoration: none
+}
+
+body,html {
+    color: #202124;
+    font: 400 16px/24px Roboto,sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+*,*::before,*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
+
+body,div,dl,dd,form,img,input,figure,menu {
+    margin: 0;
+    padding: 0
+}
+</style>
+
+<script type="text/javascript">
+window.addEventListener('message', (e) => {
+  if (e != null && e.data != null && e.data.type === "SET_BASE" && e.data.base != null) {
+    const existingBase = document.querySelector('base');
+    if (existingBase != null) {
+      existingBase.parentElement.removeChild(existingBase);
+    }
+
+    const base = document.createElement('base');
+    base.setAttribute('href', e.data.base);
+    document.head.appendChild(base);
+  }
+});
+</script>
+
+</head>
+<body>
+<div id="main">
+<H1>Soong Modules Reference</H1>
+The latest versions of Android use the Soong build system, which greatly simplifies build
+configuration over the previous Make-based system. This site contains the generated reference
+files for the Soong build system.
+
+<table class="module_types" summary="Table of Soong module types sorted by package">
+  <thead>
+    <tr>
+      <th style="width:20%">Package</th>
+      <th style="width:80%">Module types</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>android/soong/BluetoothAudio/mediatek</td>
+        <td>
+        <a href="BluetoothAudio.html#mtkBluetoothAudio_defaults">mtkBluetoothAudio_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/ImsCommon/mediatek</td>
+        <td>
+        <a href="mtkImsCommon.html#mtk_ImsCommon_defaults">mtk_ImsCommon_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/MmsService/mediatek</td>
+        <td>
+        <a href="mtkMmsService.html#mtk_MmsService_defaults">mtk_MmsService_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/MmsServiceRoboTests/mediatek</td>
+        <td>
+        <a href="mtkMmsServiceRoboTests.html#mtk_MmsServiceRoboTests_defaults">mtk_MmsServiceRoboTests_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/MmsServiceUnitTests/mediatek</td>
+        <td>
+        <a href="mtkMmsServiceUnitTests.html#mtk_MmsServiceUnitTests_defaults">mtk_MmsServiceUnitTests_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/Telecom/mediatek</td>
+        <td>
+        <a href="mtkTelecom.html#mtk_Telecom_defaults">mtk_Telecom_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/Telephony/mediatek</td>
+        <td>
+        <a href="mtkTelephony.html#mtk_Telephony_defaults">mtk_Telephony_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/TelephonyBase/mediatek</td>
+        <td>
+        <a href="mtkTelephonyBase.html#mtk_TelephonyBase_defaults">mtk_TelephonyBase_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/TelephonyCommon/mediatek</td>
+        <td>
+        <a href="mtkTelephonyCommon.html#mtk_TelephonyCommon_defaults">mtk_TelephonyCommon_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/TelephonyProvider/mediatek</td>
+        <td>
+        <a href="mtkTelephonyProvider.html#mtk_TelephonyProvider_defaults">mtk_TelephonyProvider_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/aconfig</td>
+        <td>
+        <a href="aconfig.html#aconfig_declarations">aconfig_declarations</a>, <a href="aconfig.html#aconfig_value_set">aconfig_value_set</a>, <a href="aconfig.html#aconfig_values">aconfig_values</a>, <a href="aconfig.html#all_aconfig_declarations">all_aconfig_declarations</a>, <a href="aconfig.html#all_aconfig_declarations_extension">all_aconfig_declarations_extension</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/aconfig/build_flags</td>
+        <td>
+        <a href="build_flags.html#build_flag_declarations">build_flag_declarations</a>, <a href="build_flags.html#build_flags_json">build_flags_json</a>, <a href="build_flags.html#release_config_contributions">release_config_contributions</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/aconfig/codegen</td>
+        <td>
+        <a href="codegen.html#aconfig_declarations_group">aconfig_declarations_group</a>, <a href="codegen.html#cc_aconfig_library">cc_aconfig_library</a>, <a href="codegen.html#java_aconfig_library">java_aconfig_library</a>, <a href="codegen.html#rust_aconfig_library">rust_aconfig_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/aidl</td>
+        <td>
+        <a href="aidl.html#aidl_interface">aidl_interface</a>, <a href="aidl.html#aidl_interface_defaults">aidl_interface_defaults</a>, <a href="aidl.html#aidl_interfaces_metadata">aidl_interfaces_metadata</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/aidl_library</td>
+        <td>
+        <a href="aidl_library.html#aidl_library">aidl_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android</td>
+        <td>
+        <a href="android.html#all_apex_contributions">all_apex_contributions</a>, <a href="android.html#android_info">android_info</a>, <a href="android.html#apex_contributions">apex_contributions</a>, <a href="android.html#apex_contributions_defaults">apex_contributions_defaults</a>, <a href="android.html#build_prop">build_prop</a>, <a href="android.html#csuite_config">csuite_config</a>, <a href="android.html#dirgroup">dirgroup</a>, <a href="android.html#filegroup">filegroup</a>, <a href="android.html#filegroup_defaults">filegroup_defaults</a>, <a href="android.html#gen_notice">gen_notice</a>, <a href="android.html#license">license</a>, <a href="android.html#license_kind">license_kind</a>, <a href="android.html#otatools_package_cert_files">otatools_package_cert_files</a>, <a href="android.html#package">package</a>, <a href="android.html#prebuilt_build_tool">prebuilt_build_tool</a>, <a href="android.html#product_config">product_config</a>, <a href="android.html#recovery_build_prop">recovery_build_prop</a>, <a href="android.html#removed_package">removed_package</a>, <a href="android.html#soong_config_bool_variable">soong_config_bool_variable</a>, <a href="android.html#soong_config_module_type">soong_config_module_type</a>, <a href="android.html#soong_config_module_type_import">soong_config_module_type_import</a>, <a href="android.html#soong_config_string_variable">soong_config_string_variable</a>, <a href="android.html#soong_config_value_variable">soong_config_value_variable</a>, <a href="android.html#soong_namespace">soong_namespace</a>, <a href="android.html#team">team</a>, <a href="android.html#vintf_data">vintf_data</a>, <a href="android.html#vintf_fragment">vintf_fragment</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android.hardware.audio.service-aidl.mediatek/mediatek</td>
+        <td>
+        <a href="audiohalaidl_mtk.html#mtk_libaudiohalaidl_defaults">mtk_libaudiohalaidl_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android.hardware.identity-v1-service.trustonic/mediatek</td>
+        <td>
+        <a href="TrustonicIdentity.html#mtk_android_hardware_identity_v1_service_trustonic_defaults">mtk_android_hardware_identity_v1_service_trustonic_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android.hardware.security.keymint-service.trustonic/mediatek</td>
+        <td>
+        <a href="TrustonicKeymint.html#mtk_android_hardware_security_keymint_service_trustonic_defaults">mtk_android_hardware_security_keymint_service_trustonic_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android.hardware.security.keymint-v2-service.trustonic/mediatek</td>
+        <td>
+        <a href="TrustonicKeymint.html#mtk_android_hardware_security_keymint_v2_service_trustonic_defaults">mtk_android_hardware_security_keymint_v2_service_trustonic_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android.hardware.security.keymint-v3-service.trustonic/mediatek</td>
+        <td>
+        <a href="TrustonicKeymint.html#mtk_android_hardware_security_keymint_v3_service_trustonic_defaults">mtk_android_hardware_security_keymint_v3_service_trustonic_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/android_sdk</td>
+        <td>
+        <a href="android_sdk.html#android_sdk_repo_host">android_sdk_repo_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/apex</td>
+        <td>
+        <a href="apex.html#all_apex_certs">all_apex_certs</a>, <a href="apex.html#apex">apex</a>, <a href="apex.html#apex_defaults">apex_defaults</a>, <a href="apex.html#apex_key">apex_key</a>, <a href="apex.html#apex_set">apex_set</a>, <a href="apex.html#apex_test">apex_test</a>, <a href="apex.html#apex_vndk">apex_vndk</a>, <a href="apex.html#override_apex">override_apex</a>, <a href="apex.html#prebuilt_apex">prebuilt_apex</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/apex/mediatek</td>
+        <td>
+        <a href="mtkApex.html#mtk_apex_prebuilt_library">mtk_apex_prebuilt_library</a>, <a href="mtkApex.html#trustzone_apex_definition">trustzone_apex_definition</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/api</td>
+        <td>
+        <a href="api.html#combined_apis">combined_apis</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/apudc/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libapudc_library_headers">mtk_libapudc_library_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/art</td>
+        <td>
+        <a href="art.html#art_cc_binary">art_cc_binary</a>, <a href="art.html#art_cc_defaults">art_cc_defaults</a>, <a href="art.html#art_cc_library">art_cc_library</a>, <a href="art.html#art_cc_library_static">art_cc_library_static</a>, <a href="art.html#art_cc_test">art_cc_test</a>, <a href="art.html#art_cc_test_library">art_cc_test_library</a>, <a href="art.html#art_global_defaults">art_global_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/bluetooth/mediatek</td>
+        <td>
+        <a href="mediatekBluetooth.html#mtk_defaults">mtk_defaults</a>, <a href="mediatekBluetooth.html#mtk_lhdc_defaults">mtk_lhdc_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/bpf</td>
+        <td>
+        <a href="bpf.html#bpf">bpf</a>, <a href="bpf.html#bpf_defaults">bpf_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/bpf/libbpf</td>
+        <td>
+        <a href="libbpf_prog.html#libbpf_defaults">libbpf_defaults</a>, <a href="libbpf_prog.html#libbpf_prog">libbpf_prog</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/bthal/mediatek</td>
+        <td>
+        <a href="mtkBtHal.html#mtk_bt_hal_aidl_defaults">mtk_bt_hal_aidl_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/camsys_v4l2_test/mediatek</td>
+        <td>
+        <a href="camsysV4l2Test.html#mtk_camsys_v4l2_ut_binary">mtk_camsys_v4l2_ut_binary</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/carservice-res-overlay</td>
+        <td>
+        <a href="mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults">mtk_carservice_res_resoverlay_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/cc</td>
+        <td>
+        <a href="cc.html#cc_benchmark">cc_benchmark</a>, <a href="cc.html#cc_benchmark_host">cc_benchmark_host</a>, <a href="cc.html#cc_binary">cc_binary</a>, <a href="cc.html#cc_binary_host">cc_binary_host</a>, <a href="cc.html#cc_cmake_snapshot">cc_cmake_snapshot</a>, <a href="cc.html#cc_defaults">cc_defaults</a>, <a href="cc.html#cc_fuzz">cc_fuzz</a>, <a href="cc.html#cc_genrule">cc_genrule</a>, <a href="cc.html#cc_library">cc_library</a>, <a href="cc.html#cc_library_headers">cc_library_headers</a>, <a href="cc.html#cc_library_host_shared">cc_library_host_shared</a>, <a href="cc.html#cc_library_host_static">cc_library_host_static</a>, <a href="cc.html#cc_library_shared">cc_library_shared</a>, <a href="cc.html#cc_library_static">cc_library_static</a>, <a href="cc.html#cc_object">cc_object</a>, <a href="cc.html#cc_prebuilt_binary">cc_prebuilt_binary</a>, <a href="cc.html#cc_prebuilt_library">cc_prebuilt_library</a>, <a href="cc.html#cc_prebuilt_library_headers">cc_prebuilt_library_headers</a>, <a href="cc.html#cc_prebuilt_library_shared">cc_prebuilt_library_shared</a>, <a href="cc.html#cc_prebuilt_library_static">cc_prebuilt_library_static</a>, <a href="cc.html#cc_prebuilt_object">cc_prebuilt_object</a>, <a href="cc.html#cc_prebuilt_test_library_shared">cc_prebuilt_test_library_shared</a>, <a href="cc.html#cc_preprocess_no_configuration">cc_preprocess_no_configuration</a>, <a href="cc.html#cc_rustlibs_for_make">cc_rustlibs_for_make</a>, <a href="cc.html#cc_test">cc_test</a>, <a href="cc.html#cc_test_host">cc_test_host</a>, <a href="cc.html#cc_test_library">cc_test_library</a>, <a href="cc.html#fdo_profile">fdo_profile</a>, <a href="cc.html#kernel_headers">kernel_headers</a>, <a href="cc.html#llndk_libraries_txt">llndk_libraries_txt</a>, <a href="cc.html#ndk_headers">ndk_headers</a>, <a href="cc.html#ndk_library">ndk_library</a>, <a href="cc.html#preprocessed_ndk_headers">preprocessed_ndk_headers</a>, <a href="cc.html#sanitizer_libraries_txt">sanitizer_libraries_txt</a>, <a href="cc.html#vndk_prebuilt_shared">vndk_prebuilt_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/cc/mediatek</td>
+        <td>
+        <a href="mtkCc.html#mgvi_cc_library_shared">mgvi_cc_library_shared</a>, <a href="mtkCc.html#mgvi_cc_prebuilt_library_shared">mgvi_cc_prebuilt_library_shared</a>, <a href="mtkCc.html#mtk_cc_prebuilt_library">mtk_cc_prebuilt_library</a>, <a href="mtkCc.html#mtk_cc_prebuilt_library_mix">mtk_cc_prebuilt_library_mix</a>, <a href="mtkCc.html#mtk_global_cgen_defaults">mtk_global_cgen_defaults</a>, <a href="mtkCc.html#mtk_global_define_defaults">mtk_global_define_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/ccci/mediatek</td>
+        <td>
+        <a href="mtkCcciUtil.html#mtk_ccci_util_defaults">mtk_ccci_util_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/ci_tests</td>
+        <td>
+        <a href="ci_tests.html#test_package">test_package</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/compliance</td>
+        <td>
+        <a href="compliance.html#notice_xml">notice_xml</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/csuite</td>
+        <td>
+        <a href="csuite.html#csuite_test">csuite_test</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/cuttlefish</td>
+        <td>
+        <a href="cuttlefish.html#cvd_host_package">cvd_host_package</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/etc</td>
+        <td>
+        <a href="etc.html#adb_keys">adb_keys</a>, <a href="etc.html#avbpubkey">avbpubkey</a>, <a href="etc.html#install_symlink">install_symlink</a>, <a href="etc.html#install_symlink_host">install_symlink_host</a>, <a href="etc.html#otacerts_zip">otacerts_zip</a>, <a href="etc.html#prebuilt_any">prebuilt_any</a>, <a href="etc.html#prebuilt_avb">prebuilt_avb</a>, <a href="etc.html#prebuilt_bin">prebuilt_bin</a>, <a href="etc.html#prebuilt_bt_firmware">prebuilt_bt_firmware</a>, <a href="etc.html#prebuilt_defaults">prebuilt_defaults</a>, <a href="etc.html#prebuilt_dsp">prebuilt_dsp</a>, <a href="etc.html#prebuilt_etc">prebuilt_etc</a>, <a href="etc.html#prebuilt_etc_cacerts">prebuilt_etc_cacerts</a>, <a href="etc.html#prebuilt_etc_host">prebuilt_etc_host</a>, <a href="etc.html#prebuilt_firmware">prebuilt_firmware</a>, <a href="etc.html#prebuilt_first_stage_ramdisk">prebuilt_first_stage_ramdisk</a>, <a href="etc.html#prebuilt_font">prebuilt_font</a>, <a href="etc.html#prebuilt_framework">prebuilt_framework</a>, <a href="etc.html#prebuilt_gpu">prebuilt_gpu</a>, <a href="etc.html#prebuilt_media">prebuilt_media</a>, <a href="etc.html#prebuilt_odm">prebuilt_odm</a>, <a href="etc.html#prebuilt_optee">prebuilt_optee</a>, <a href="etc.html#prebuilt_overlay">prebuilt_overlay</a>, <a href="etc.html#prebuilt_priv_app">prebuilt_priv_app</a>, <a href="etc.html#prebuilt_radio">prebuilt_radio</a>, <a href="etc.html#prebuilt_renderscript_bitcode">prebuilt_renderscript_bitcode</a>, <a href="etc.html#prebuilt_res">prebuilt_res</a>, <a href="etc.html#prebuilt_rfs">prebuilt_rfs</a>, <a href="etc.html#prebuilt_rfsa">prebuilt_rfsa</a>, <a href="etc.html#prebuilt_root">prebuilt_root</a>, <a href="etc.html#prebuilt_root_host">prebuilt_root_host</a>, <a href="etc.html#prebuilt_sbin">prebuilt_sbin</a>, <a href="etc.html#prebuilt_system">prebuilt_system</a>, <a href="etc.html#prebuilt_tee">prebuilt_tee</a>, <a href="etc.html#prebuilt_tts">prebuilt_tts</a>, <a href="etc.html#prebuilt_tvconfig">prebuilt_tvconfig</a>, <a href="etc.html#prebuilt_tvservice">prebuilt_tvservice</a>, <a href="etc.html#prebuilt_usr_hyphendata">prebuilt_usr_hyphendata</a>, <a href="etc.html#prebuilt_usr_idc">prebuilt_usr_idc</a>, <a href="etc.html#prebuilt_usr_keychars">prebuilt_usr_keychars</a>, <a href="etc.html#prebuilt_usr_keylayout">prebuilt_usr_keylayout</a>, <a href="etc.html#prebuilt_usr_odml">prebuilt_usr_odml</a>, <a href="etc.html#prebuilt_usr_share">prebuilt_usr_share</a>, <a href="etc.html#prebuilt_usr_share_host">prebuilt_usr_share_host</a>, <a href="etc.html#prebuilt_usr_srec">prebuilt_usr_srec</a>, <a href="etc.html#prebuilt_vendor">prebuilt_vendor</a>, <a href="etc.html#prebuilt_vendor_dlkm">prebuilt_vendor_dlkm</a>, <a href="etc.html#prebuilt_vendor_overlay">prebuilt_vendor_overlay</a>, <a href="etc.html#prebuilt_voicepack">prebuilt_voicepack</a>, <a href="etc.html#prebuilt_wallpaper">prebuilt_wallpaper</a>, <a href="etc.html#prebuilt_wlc_upt">prebuilt_wlc_upt</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/external/clang</td>
+        <td>
+        <a href="clang.html#clang_binary_host">clang_binary_host</a>, <a href="clang.html#clang_tblgen">clang_tblgen</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/external/libchrome</td>
+        <td>
+        <a href="libchrome.html#generate_mojom_downgraded_files">generate_mojom_downgraded_files</a>, <a href="libchrome.html#generate_mojom_headers">generate_mojom_headers</a>, <a href="libchrome.html#generate_mojom_pickles">generate_mojom_pickles</a>, <a href="libchrome.html#generate_mojom_srcjar">generate_mojom_srcjar</a>, <a href="libchrome.html#generate_mojom_srcs">generate_mojom_srcs</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/external/llvm</td>
+        <td>
+        <a href="llvm.html#force_build_llvm_components_defaults">force_build_llvm_components_defaults</a>, <a href="llvm.html#llvm_defaults">llvm_defaults</a>, <a href="llvm.html#llvm_tblgen">llvm_tblgen</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/external/noto-fonts</td>
+        <td>
+        <a href="noto_fonts.html#prebuilt_versioned_font">prebuilt_versioned_font</a>, <a href="noto_fonts.html#versioned_font_config">versioned_font_config</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/external/wayland-protocol</td>
+        <td>
+        <a href="soong_wayland_protocol_codegen.html#wayland_protocol_codegen">wayland_protocol_codegen</a>, <a href="soong_wayland_protocol_codegen.html#wayland_protocol_codegen_defaults">wayland_protocol_codegen_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/fdsan/mediatek</td>
+        <td>
+        <a href="fdsan.html#fdsan_headers">fdsan_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/fdsan_mtkcam13/mediatek</td>
+        <td>
+        <a href="fdsan.html#fdsan_headers_mtkcam13">fdsan_headers_mtkcam13</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/filesystem</td>
+        <td>
+        <a href="filesystem.html#android_filesystem">android_filesystem</a>, <a href="filesystem.html#android_filesystem_defaults">android_filesystem_defaults</a>, <a href="filesystem.html#android_system_image">android_system_image</a>, <a href="filesystem.html#avb_add_hash_footer">avb_add_hash_footer</a>, <a href="filesystem.html#avb_add_hash_footer_defaults">avb_add_hash_footer_defaults</a>, <a href="filesystem.html#avb_gen_vbmeta_image">avb_gen_vbmeta_image</a>, <a href="filesystem.html#avb_gen_vbmeta_image_defaults">avb_gen_vbmeta_image_defaults</a>, <a href="filesystem.html#bootconfig">bootconfig</a>, <a href="filesystem.html#bootimg">bootimg</a>, <a href="filesystem.html#logical_partition">logical_partition</a>, <a href="filesystem.html#raw_binary">raw_binary</a>, <a href="filesystem.html#super_image">super_image</a>, <a href="filesystem.html#vbmeta">vbmeta</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/fod_mvpu/mediatek</td>
+        <td>
+        <a href="mtkFodFeature.html#mtk_fod_mvpu_defaults">mtk_fod_mvpu_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/framework-car-res-overlay</td>
+        <td>
+        <a href="mtkFrameworkCarResOverlay.html#mtk_framework_car_res_resoverlay_defaults">mtk_framework_car_res_resoverlay_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/framework/mediatek</td>
+        <td>
+        <a href="mtkFramework.html#mtk_framework_defaults">mtk_framework_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/fs_config</td>
+        <td>
+        <a href="fs_config.html#target_fs_config_gen_filegroup">target_fs_config_gen_filegroup</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/fsgen</td>
+        <td>
+        <a href="fsgen.html#soong_filesystem_creator">soong_filesystem_creator</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/gcov/mediatek</td>
+        <td>
+        <a href="mtkLibGcovscript.html#mtk_gcov_hidl_defaults">mtk_gcov_hidl_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/genrule</td>
+        <td>
+        <a href="genrule.html#genrule">genrule</a>, <a href="genrule.html#genrule_defaults">genrule_defaults</a>, <a href="genrule.html#gensrcs">gensrcs</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/golang</td>
+        <td>
+        <a href="golang.html#blueprint_go_binary">blueprint_go_binary</a>, <a href="golang.html#bootstrap_go_package">bootstrap_go_package</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/hidl</td>
+        <td>
+        <a href="hidl.html#hidl_interface">hidl_interface</a>, <a href="hidl.html#hidl_interfaces_metadata">hidl_interfaces_metadata</a>, <a href="hidl.html#hidl_package_root">hidl_package_root</a>, <a href="hidl.html#prebuilt_hidl_interfaces">prebuilt_hidl_interfaces</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_adl/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvadl_library_shared">mtk_libdrvadl_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_adl_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_adl_library">imgsys_build_mtkcam12_adl_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_adl_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_adl_library">imgsys_build_mtkcam13_adl_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend/medaitek</td>
+        <td>
+        <a href="imgsysbackend.html#imgsys_build_libimgsys_backend_headers">imgsys_build_libimgsys_backend_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_adl/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendAdl.html#imgsys_build_libimgsys_adl">imgsys_build_libimgsys_adl</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_dfp/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendDfp.html#imgsys_build_libimgsys_dfp">imgsys_build_libimgsys_dfp</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_dip/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendDip.html#imgsys_build_libimgsys_dip">imgsys_build_libimgsys_dip</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_dpe/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendDpe.html#imgsys_build_libimgsys_dpe">imgsys_build_libimgsys_dpe</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_drvutils/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendDrvcommon.html#imgsys_build_libimgsys_drvutils">imgsys_build_libimgsys_drvutils</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_gce/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendGce.html#imgsys_build_libimgsys_gce">imgsys_build_libimgsys_gce</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_interfaces/medaitek</td>
+        <td>
+        <a href="imgsysbackend.html#imgsys_build_libimgsys_backend_interfaces_headers">imgsys_build_libimgsys_backend_interfaces_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_mae/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendMae.html#imgsys_build_libimgsys_mae">imgsys_build_libimgsys_mae</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_me/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendMe.html#imgsys_build_libimgsys_me">imgsys_build_libimgsys_me</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_omc/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendOmc.html#imgsys_build_libimgsys_omc">imgsys_build_libimgsys_omc</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_pqdip/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendPqdip.html#imgsys_build_libimgsys_pqdip">imgsys_build_libimgsys_pqdip</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_taskhandler/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendTaskhandler.html#imgsys_build_libimgsys_taskhandler">imgsys_build_libimgsys_taskhandler</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_tdrhal/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_backend_tdrhal_library_shared">imgsys_backend_tdrhal_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_traw/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendTraw.html#imgsys_build_libimgsys_traw">imgsys_build_libimgsys_traw</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_utils/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendUtils.html#imgsys_backend_utils_library_shared">imgsys_backend_utils_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_backend_wpe/medaitek</td>
+        <td>
+        <a href="LibImgsysBackendWpe.html#imgsys_build_libimgsys_wpe">imgsys_build_libimgsys_wpe</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_custom/mediatek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libcustom_library_shared">mtk_libcustom_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_custom_mtkcam13/mediatek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_custom_library">imgsys_build_mtkcam13_custom_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_daemon/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdaemon_library_shared">mtk_libdaemon_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_daemon_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_daemon_library">imgsys_build_mtkcam12_daemon_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_daemon_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_daemon_library">imgsys_build_mtkcam13_daemon_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_dip/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvdip_library_shared">mtk_libdrvdip_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_dip_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_dip_library">imgsys_build_mtkcam12_dip_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_dip_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_dip_library">imgsys_build_mtkcam13_dip_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_drvcommon/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvcommon_library_shared">mtk_libdrvcommon_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_drvcommon_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_drvcommon_library">imgsys_build_mtkcam12_drvcommon_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_drvcommon_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_drvcommon_library">imgsys_build_mtkcam13_drvcommon_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_gce/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvgce_library_shared">mtk_libdrvgce_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_gce_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_gce_library">imgsys_build_mtkcam12_gce_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_gce_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_gce_library">imgsys_build_mtkcam13_gce_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_ibc_chip/medaitek</td>
+        <td>
+        <a href="imgsysbackend.html#imgsys_build_libimgsys_ibc_chip_headers">imgsys_build_libimgsys_ibc_chip_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_ibc_custom/mediatek</td>
+        <td>
+        <a href="LibImgsysIBCCustom.html#imgsys_ibc_custom_library_shared">imgsys_ibc_custom_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_ibc_daemon/medaitek</td>
+        <td>
+        <a href="LibImgsysIBCDaemon.html#imgsys_ibc_daemon_library_shared">imgsys_ibc_daemon_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_ibc_utils/medaitek</td>
+        <td>
+        <a href="LibImgsysIBCUtils.html#imgsys_ibc_utils_library_shared">imgsys_ibc_utils_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_me/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvme_library_shared">mtk_libdrvme_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_me_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_me_library">imgsys_build_mtkcam12_me_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_me_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_me_library">imgsys_build_mtkcam13_me_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_osal/medaitek</td>
+        <td>
+        <a href="imgsysosal.html#imgsys_build_libimgsys_osal">imgsys_build_libimgsys_osal</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_pqdip/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvpqdip_library_shared">mtk_libdrvpqdip_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_pqdip_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_pqdip_library">imgsys_build_mtkcam12_pqdip_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_pqdip_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_pqdip_library">imgsys_build_mtkcam13_pqdip_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_system/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libsystem_library_shared">mtk_libsystem_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_system_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_system_library">imgsys_build_mtkcam12_system_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_system_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_system_library">imgsys_build_mtkcam13_system_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_taskhandler/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libtaskhandler_library_shared">mtk_libtaskhandler_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_taskhandler_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_taskhandler_library">imgsys_build_mtkcam12_taskhandler_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_taskhandler_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_taskhandler_library">imgsys_build_mtkcam13_taskhandler_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_tdrhal/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libtdrhal_library_shared">mtk_libtdrhal_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_tdrhal_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_tdrhal_library">imgsys_build_mtkcam12_tdrhal_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_tdrhal_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_tdrhal_library">imgsys_build_mtkcam13_tdrhal_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_tile/medaitek</td>
+        <td>
+        <a href="mtkcam.html#imgsys_tile_library_shared">imgsys_tile_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_tileheader/medaitek</td>
+        <td>
+        <a href="LibImgsysTileHeader.html#imgsys_tile_library_headers">imgsys_tile_library_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_top/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_libimgsys_adl_headers">imgsys_build_libimgsys_adl_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_cmnheaders">imgsys_build_libimgsys_cmnheaders</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_ctrlmeta_headers">imgsys_build_libimgsys_ctrlmeta_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_ctrlmeta_headers_legacy">imgsys_build_libimgsys_ctrlmeta_headers_legacy</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_dfp_headers">imgsys_build_libimgsys_dfp_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_dip_headers">imgsys_build_libimgsys_dip_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_dpe_headers">imgsys_build_libimgsys_dpe_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_gce_headers">imgsys_build_libimgsys_gce_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_mae_headers">imgsys_build_libimgsys_mae_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_me_headers">imgsys_build_libimgsys_me_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_omc_headers">imgsys_build_libimgsys_omc_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_pqdip_headers">imgsys_build_libimgsys_pqdip_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_traw_headers">imgsys_build_libimgsys_traw_headers</a>, <a href="LibImgsysTop.html#imgsys_build_libimgsys_wpe_headers">imgsys_build_libimgsys_wpe_headers</a>, <a href="LibImgsysTop.html#imgsysadl_library_headers">imgsysadl_library_headers</a>, <a href="LibImgsysTop.html#imgsyscmn_library_headers">imgsyscmn_library_headers</a>, <a href="LibImgsysTop.html#imgsyscustom_library_headers">imgsyscustom_library_headers</a>, <a href="LibImgsysTop.html#imgsysdip_library_headers">imgsysdip_library_headers</a>, <a href="LibImgsysTop.html#imgsysgce_library_headers">imgsysgce_library_headers</a>, <a href="LibImgsysTop.html#imgsysme_library_headers">imgsysme_library_headers</a>, <a href="LibImgsysTop.html#imgsyspqdip_library_headers">imgsyspqdip_library_headers</a>, <a href="LibImgsysTop.html#imgsystraw_library_headers">imgsystraw_library_headers</a>, <a href="LibImgsysTop.html#imgsyswpe_library_headers">imgsyswpe_library_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_top_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_adl_library_headers">imgsys_build_mtkcam12_adl_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_cmn_library_headers">imgsys_build_mtkcam12_cmn_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_dip_library_headers">imgsys_build_mtkcam12_dip_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_gce_library_headers">imgsys_build_mtkcam12_gce_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_me_library_headers">imgsys_build_mtkcam12_me_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_pqdip_library_headers">imgsys_build_mtkcam12_pqdip_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_traw_library_headers">imgsys_build_mtkcam12_traw_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam12_wpe_library_headers">imgsys_build_mtkcam12_wpe_library_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_top_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_adl_library_headers">imgsys_build_mtkcam13_adl_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_cmn_library_headers">imgsys_build_mtkcam13_cmn_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_custom_library_headers">imgsys_build_mtkcam13_custom_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_dip_library_headers">imgsys_build_mtkcam13_dip_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_gce_library_headers">imgsys_build_mtkcam13_gce_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_me_library_headers">imgsys_build_mtkcam13_me_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_pqdip_library_headers">imgsys_build_mtkcam13_pqdip_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_traw_library_headers">imgsys_build_mtkcam13_traw_library_headers</a>, <a href="LibImgsysTop.html#imgsys_build_mtkcam13_wpe_library_headers">imgsys_build_mtkcam13_wpe_library_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_traw/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvtraw_library_shared">mtk_libdrvtraw_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_traw_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_traw_library">imgsys_build_mtkcam12_traw_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_traw_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_traw_library">imgsys_build_mtkcam13_traw_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_utils/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvutils_library_shared">mtk_libdrvutils_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_utils_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_drvutils_library">imgsys_build_mtkcam12_drvutils_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_utils_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_drvutils_library">imgsys_build_mtkcam13_drvutils_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_wpe/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#mtk_libdrvwpe_library_shared">mtk_libdrvwpe_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_wpe_mtkcam12/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam12_wpe_library">imgsys_build_mtkcam12_wpe_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/imgsys_wpe_mtkcam13/medaitek</td>
+        <td>
+        <a href="LibImgsysTop.html#imgsys_build_mtkcam13_wpe_library">imgsys_build_mtkcam13_wpe_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/java</td>
+        <td>
+        <a href="java.html#android_app">android_app</a>, <a href="java.html#android_app_certificate">android_app_certificate</a>, <a href="java.html#android_app_import">android_app_import</a>, <a href="java.html#android_app_set">android_app_set</a>, <a href="java.html#android_library">android_library</a>, <a href="java.html#android_library_import">android_library_import</a>, <a href="java.html#android_ravenwood_libgroup">android_ravenwood_libgroup</a>, <a href="java.html#android_ravenwood_test">android_ravenwood_test</a>, <a href="java.html#android_robolectric_runtimes">android_robolectric_runtimes</a>, <a href="java.html#android_robolectric_test">android_robolectric_test</a>, <a href="java.html#android_test">android_test</a>, <a href="java.html#android_test_helper_app">android_test_helper_app</a>, <a href="java.html#android_test_import">android_test_import</a>, <a href="java.html#art_boot_images">art_boot_images</a>, <a href="java.html#autogen_runtime_resource_overlay">autogen_runtime_resource_overlay</a>, <a href="java.html#bootclasspath_fragment">bootclasspath_fragment</a>, <a href="java.html#bootclasspath_fragment_test">bootclasspath_fragment_test</a>, <a href="java.html#dex_bootjars">dex_bootjars</a>, <a href="java.html#dex_import">dex_import</a>, <a href="java.html#dexpreopt_systemserver_check">dexpreopt_systemserver_check</a>, <a href="java.html#doc_defaults">doc_defaults</a>, <a href="java.html#droiddoc">droiddoc</a>, <a href="java.html#droiddoc_exported_dir">droiddoc_exported_dir</a>, <a href="java.html#droiddoc_host">droiddoc_host</a>, <a href="java.html#droidstubs">droidstubs</a>, <a href="java.html#droidstubs_host">droidstubs_host</a>, <a href="java.html#global_compat_config">global_compat_config</a>, <a href="java.html#java_api_contribution">java_api_contribution</a>, <a href="java.html#java_api_contribution_import">java_api_contribution_import</a>, <a href="java.html#java_api_library">java_api_library</a>, <a href="java.html#java_binary">java_binary</a>, <a href="java.html#java_binary_host">java_binary_host</a>, <a href="java.html#java_defaults">java_defaults</a>, <a href="java.html#java_device_for_host">java_device_for_host</a>, <a href="java.html#java_fuzz">java_fuzz</a>, <a href="java.html#java_genrule">java_genrule</a>, <a href="java.html#java_genrule_combiner">java_genrule_combiner</a>, <a href="java.html#java_genrule_host">java_genrule_host</a>, <a href="java.html#java_host_for_device">java_host_for_device</a>, <a href="java.html#java_import">java_import</a>, <a href="java.html#java_import_host">java_import_host</a>, <a href="java.html#java_library">java_library</a>, <a href="java.html#java_library_host">java_library_host</a>, <a href="java.html#java_library_static">java_library_static</a>, <a href="java.html#java_plugin">java_plugin</a>, <a href="java.html#java_sdk_library">java_sdk_library</a>, <a href="java.html#java_sdk_library_import">java_sdk_library_import</a>, <a href="java.html#java_system_modules">java_system_modules</a>, <a href="java.html#java_system_modules_import">java_system_modules_import</a>, <a href="java.html#java_test">java_test</a>, <a href="java.html#java_test_helper_library">java_test_helper_library</a>, <a href="java.html#java_test_host">java_test_host</a>, <a href="java.html#java_test_import">java_test_import</a>, <a href="java.html#javadoc">javadoc</a>, <a href="java.html#javadoc_host">javadoc_host</a>, <a href="java.html#kotlin_plugin">kotlin_plugin</a>, <a href="java.html#override_android_app">override_android_app</a>, <a href="java.html#override_android_test">override_android_test</a>, <a href="java.html#override_runtime_resource_overlay">override_runtime_resource_overlay</a>, <a href="java.html#platform_bootclasspath">platform_bootclasspath</a>, <a href="java.html#platform_compat_config">platform_compat_config</a>, <a href="java.html#platform_systemserverclasspath">platform_systemserverclasspath</a>, <a href="java.html#prebuilt_apis">prebuilt_apis</a>, <a href="java.html#prebuilt_bootclasspath_fragment">prebuilt_bootclasspath_fragment</a>, <a href="java.html#prebuilt_platform_compat_config">prebuilt_platform_compat_config</a>, <a href="java.html#prebuilt_stubs_sources">prebuilt_stubs_sources</a>, <a href="java.html#prebuilt_systemserverclasspath_fragment">prebuilt_systemserverclasspath_fragment</a>, <a href="java.html#runtime_resource_overlay">runtime_resource_overlay</a>, <a href="java.html#stubs_defaults">stubs_defaults</a>, <a href="java.html#systemserverclasspath_fragment">systemserverclasspath_fragment</a>, <a href="java.html#tradefed_java_library_host">tradefed_java_library_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/java/mediatek</td>
+        <td>
+        <a href="mtkJava.html#mtk_java_prebuilt_library">mtk_java_prebuilt_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/kernel</td>
+        <td>
+        <a href="kernel.html#prebuilt_kernel_modules">prebuilt_kernel_modules</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/kernel/configs</td>
+        <td>
+        <a href="configs.html#kernel_config">kernel_config</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-apu-mdw/mediatek</td>
+        <td>
+        <a href="LibAPU.html#apu_mdw_cc_library_shared">apu_mdw_cc_library_shared</a>, <a href="LibAPU.html#mtk_libapu_mdw_platform_headers">mtk_libapu_mdw_platform_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-apu-utils/mediatek</td>
+        <td>
+        <a href="LibAPU.html#apu_mdw_batch_cc_library_shared">apu_mdw_batch_cc_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-apu_sample/mediatek</td>
+        <td>
+        <a href="LibAPUSYSSAMPLE.html#apu_sample_cc_library_static">apu_sample_cc_library_static</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-apusys/mediatek</td>
+        <td>
+        <a href="LibAPUSYS.html#apusys_cc_library_shared">apusys_cc_library_shared</a>, <a href="LibAPUSYS.html#mtk_libapusys_platform_headers">mtk_libapusys_platform_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-apusys_sample/mediatek</td>
+        <td>
+        <a href="LibAPUSYSSAMPLE.html#apusys_sample_cc_library_static">apusys_sample_cc_library_static</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-apuware-hidl/mediatek</td>
+        <td>
+        <a href="apuwareFeature.html#apuware_defaults">apuware_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-mmagent/mediatek</td>
+        <td>
+        <a href="MMAgentLib.html#mtk_libmmagent_nn_dummy">mtk_libmmagent_nn_dummy</a>, <a href="MMAgentLib.html#mtk_libmmagent_nn_v5">mtk_libmmagent_nn_v5</a>, <a href="MMAgentLib.html#mtk_libmmagent_nn_v6">mtk_libmmagent_nn_v6</a>, <a href="MMAgentLib.html#mtk_libmmagent_nn_v7">mtk_libmmagent_nn_v7</a>, <a href="MMAgentLib.html#mtk_libmmagent_nn_v8">mtk_libmmagent_nn_v8</a>, <a href="MMAgentLib.html#mtk_libmmagent_nn_v9">mtk_libmmagent_nn_v9</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-vpu/mediatek</td>
+        <td>
+        <a href="LibVPU.html#mtk_libvpu_platform_headers">mtk_libvpu_platform_headers</a>, <a href="LibVPU.html#vpu_cc_library_shared">vpu_cc_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/lib-vpu5/mediatek</td>
+        <td>
+        <a href="LibVPU5.html#mtk_libvpu5_platform_headers">mtk_libvpu5_platform_headers</a>, <a href="LibVPU5.html#vpu5_cc_library_shared">vpu5_cc_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libMcClient/mediatek</td>
+        <td>
+        <a href="mtkLibMcClient.html#mtk_libmcclient_defaults">mtk_libmcclient_defaults</a>, <a href="mtkLibMcClient.html#mtk_teecommon_headers_defaults">mtk_teecommon_headers_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libc2/vcodec/mediatek</td>
+        <td>
+        <a href="vcodec.html#mtk_platform_ion_defaults">mtk_platform_ion_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libccdframework/mediatek</td>
+        <td>
+        <a href="mtkLibccdFramework.html#mtk_ccd_library_headers">mtk_ccd_library_headers</a>, <a href="mtkLibccdFramework.html#mtk_ccd_library_shared">mtk_ccd_library_shared</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libdpframework/mediatek</td>
+        <td>
+        <a href="mtkLibdpFramework.html#mtk_libdpframework_dummy_defaults">mtk_libdpframework_dummy_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_l5g_defaults">mtk_libdpframework_l5g_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v1_defaults">mtk_libdpframework_v1_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v2_defaults">mtk_libdpframework_v2_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v2p1_defaults">mtk_libdpframework_v2p1_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v2p2_defaults">mtk_libdpframework_v2p2_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v2p3_defaults">mtk_libdpframework_v2p3_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v2p4_defaults">mtk_libdpframework_v2p4_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v3_defaults">mtk_libdpframework_v3_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v3p1_defaults">mtk_libdpframework_v3p1_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v3p2_defaults">mtk_libdpframework_v3p2_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v4_defaults">mtk_libdpframework_v4_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v5_defaults">mtk_libdpframework_v5_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v5p1_defaults">mtk_libdpframework_v5p1_defaults</a>, <a href="mtkLibdpFramework.html#mtk_libdpframework_v6_defaults">mtk_libdpframework_v6_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libdpframework/mediatek_l4g</td>
+        <td>
+        <a href="mtkLibdpFramework_l4g.html#mtk_libdpframework_l4g_defaults">mtk_libdpframework_l4g_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libdpframeworkUT/mediatek</td>
+        <td>
+        <a href="mtkLibdpFrameworkUT.html#mtk_libdpframeworkUT_defaults">mtk_libdpframeworkUT_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libgralloc_extra_common/mediatek</td>
+        <td>
+        <a href="mtkLibgrallocExtraCommon.html#gralloc_extra_defaults">gralloc_extra_defaults</a>, <a href="mtkLibgrallocExtraCommon.html#gralloc_extra_sys_defaults">gralloc_extra_sys_defaults</a>, <a href="mtkLibgrallocExtraCommon.html#mtk_libgralloc_extra_common_defaults">mtk_libgralloc_extra_common_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libisphandler/mediatek</td>
+        <td>
+        <a href="mtkLibispHandler.html#mtk_libisphandler_dump_binary">mtk_libisphandler_dump_binary</a>, <a href="mtkLibispHandler.html#mtk_libisphandler_library">mtk_libisphandler_library</a>, <a href="mtkLibispHandler.html#mtk_libisphandler_ut_binary">mtk_libisphandler_ut_binary</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libm4u/mediatek</td>
+        <td>
+        <a href="mtkLibm4u.html#mtk_libm4u_defaults">mtk_libm4u_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libshowlogo/mediatek</td>
+        <td>
+        <a href="mtkLibshowlogo.html#mtk_libshowlogo_defaults">mtk_libshowlogo_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/libtrm_build/mediatek</td>
+        <td>
+        <a href="libtrm_build.html#libtrm_build">libtrm_build</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/linkerconfig</td>
+        <td>
+        <a href="linkerconfig.html#linker_config">linker_config</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mediatek-carconnectivity-res-overlay</td>
+        <td>
+        <a href="mtkCarConnectivityResOverlay.html#mtkbsp_carconnectivity_res_resoverlay_defaults">mtkbsp_carconnectivity_res_resoverlay_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mgvimtkcam/mediatek</td>
+        <td>
+        <a href="mtkcam.html#mtkcam_binary">mtkcam_binary</a>, <a href="mtkcam.html#mtkcam_genrule">mtkcam_genrule</a>, <a href="mtkcam.html#mtkcam_library_headers">mtkcam_library_headers</a>, <a href="mtkcam.html#mtkcam_library_shared">mtkcam_library_shared</a>, <a href="mtkcam.html#mtkcam_library_static">mtkcam_library_static</a>, <a href="mtkcam.html#mtkcam_prebuilt_library_shared">mtkcam_prebuilt_library_shared</a>, <a href="mtkcam.html#mtkcam_prebuilt_library_static">mtkcam_prebuilt_library_static</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mml/mediatek</td>
+        <td>
+        <a href="mtkLibmml.html#mtk_libmml_dummy">mtk_libmml_dummy</a>, <a href="mtkLibmml.html#mtk_libmml_legacy">mtk_libmml_legacy</a>, <a href="mtkLibmml.html#mtk_libmml_v1">mtk_libmml_v1</a>, <a href="mtkLibmml.html#mtk_libmml_v2">mtk_libmml_v2</a>, <a href="mtkLibmml.html#mtk_libmml_v3">mtk_libmml_v3</a>, <a href="mtkLibmml.html#mtk_libmml_v3p1">mtk_libmml_v3p1</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mmlpqconfig/mediatek</td>
+        <td>
+        <a href="mtkLibmmlpqconfig.html#mtk_libmmlpqconfig_defaults">mtk_libmmlpqconfig_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mtkcam/mediatek</td>
+        <td>
+        <a href="mtkcam.html#mtk_mtkcam_algorithm_platform_headers">mtk_mtkcam_algorithm_platform_headers</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mtklibmipc/mediatek</td>
+        <td>
+        <a href="mtklibmipc.html#mtklibmipc">mtklibmipc</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/mtkproductapi/mediatek</td>
+        <td>
+        <a href="mtkProductApi.html#mtk_product_api_check_defaults">mtk_product_api_check_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/optee_client</td>
+        <td>
+        <a href="optee_client.html#optee_client_TEECommon_headers_defaults">optee_client_TEECommon_headers_defaults</a>, <a href="optee_client.html#optee_client_library_defaults">optee_client_library_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/phony</td>
+        <td>
+        <a href="phony.html#phony">phony</a>, <a href="phony.html#phony_rule">phony_rule</a>, <a href="phony.html#phony_rule_defaults">phony_rule_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/pmem/mediatek</td>
+        <td>
+        <a href="mtkPmemFeature.html#mtk_pmem_defaults">mtk_pmem_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/prebuilts/clang/host/linux-x86/clangprebuilts</td>
+        <td>
+        <a href="clangprebuilts.html#clang_builtin_headers">clang_builtin_headers</a>, <a href="clangprebuilts.html#libclang_rt_prebuilt_library_shared">libclang_rt_prebuilt_library_shared</a>, <a href="clangprebuilts.html#libclang_rt_prebuilt_library_static">libclang_rt_prebuilt_library_static</a>, <a href="clangprebuilts.html#libclang_rt_prebuilt_object">libclang_rt_prebuilt_object</a>, <a href="clangprebuilts.html#llvm_darwin_filegroup">llvm_darwin_filegroup</a>, <a href="clangprebuilts.html#llvm_host_defaults">llvm_host_defaults</a>, <a href="clangprebuilts.html#llvm_prebuilt_build_tool">llvm_prebuilt_build_tool</a>, <a href="clangprebuilts.html#llvm_prebuilt_library_shared">llvm_prebuilt_library_shared</a>, <a href="clangprebuilts.html#llvm_prebuilt_library_static">llvm_prebuilt_library_static</a>, <a href="clangprebuilts.html#llvm_tools_filegroup">llvm_tools_filegroup</a>, <a href="clangprebuilts.html#ndk_prebuilt_shared_stl">ndk_prebuilt_shared_stl</a>, <a href="clangprebuilts.html#ndk_prebuilt_static_stl">ndk_prebuilt_static_stl</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/prebuilts/rust/rustprebuilts</td>
+        <td>
+        <a href="rustprebuilts.html#rust_stdlib_prebuilt_filegroup_host">rust_stdlib_prebuilt_filegroup_host</a>, <a href="rustprebuilts.html#rust_stdlib_prebuilt_host">rust_stdlib_prebuilt_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/python</td>
+        <td>
+        <a href="python.html#python_binary_host">python_binary_host</a>, <a href="python.html#python_defaults">python_defaults</a>, <a href="python.html#python_library">python_library</a>, <a href="python.html#python_library_host">python_library_host</a>, <a href="python.html#python_test">python_test</a>, <a href="python.html#python_test_host">python_test_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/robolectric</td>
+        <td>
+        <a href="robolectric.html#robolectric_build_props">robolectric_build_props</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/rust</td>
+        <td>
+        <a href="rust.html#rust_benchmark">rust_benchmark</a>, <a href="rust.html#rust_benchmark_host">rust_benchmark_host</a>, <a href="rust.html#rust_binary">rust_binary</a>, <a href="rust.html#rust_binary_host">rust_binary_host</a>, <a href="rust.html#rust_bindgen">rust_bindgen</a>, <a href="rust.html#rust_bindgen_host">rust_bindgen_host</a>, <a href="rust.html#rust_defaults">rust_defaults</a>, <a href="rust.html#rust_ffi">rust_ffi</a>, <a href="rust.html#rust_ffi_host">rust_ffi_host</a>, <a href="rust.html#rust_ffi_host_shared">rust_ffi_host_shared</a>, <a href="rust.html#rust_ffi_host_static">rust_ffi_host_static</a>, <a href="rust.html#rust_ffi_shared">rust_ffi_shared</a>, <a href="rust.html#rust_ffi_static">rust_ffi_static</a>, <a href="rust.html#rust_fuzz">rust_fuzz</a>, <a href="rust.html#rust_fuzz_host">rust_fuzz_host</a>, <a href="rust.html#rust_library">rust_library</a>, <a href="rust.html#rust_library_dylib">rust_library_dylib</a>, <a href="rust.html#rust_library_host">rust_library_host</a>, <a href="rust.html#rust_library_host_dylib">rust_library_host_dylib</a>, <a href="rust.html#rust_library_host_rlib">rust_library_host_rlib</a>, <a href="rust.html#rust_library_rlib">rust_library_rlib</a>, <a href="rust.html#rust_prebuilt_dylib">rust_prebuilt_dylib</a>, <a href="rust.html#rust_prebuilt_library">rust_prebuilt_library</a>, <a href="rust.html#rust_prebuilt_proc_macro">rust_prebuilt_proc_macro</a>, <a href="rust.html#rust_prebuilt_rlib">rust_prebuilt_rlib</a>, <a href="rust.html#rust_proc_macro">rust_proc_macro</a>, <a href="rust.html#rust_protobuf">rust_protobuf</a>, <a href="rust.html#rust_protobuf_host">rust_protobuf_host</a>, <a href="rust.html#rust_test">rust_test</a>, <a href="rust.html#rust_test_host">rust_test_host</a>, <a href="rust.html#rust_toolchain_library">rust_toolchain_library</a>, <a href="rust.html#rust_toolchain_library_dylib">rust_toolchain_library_dylib</a>, <a href="rust.html#rust_toolchain_library_rlib">rust_toolchain_library_rlib</a>, <a href="rust.html#rust_toolchain_rustc_prebuilt">rust_toolchain_rustc_prebuilt</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/sdk</td>
+        <td>
+        <a href="sdk.html#module_exports">module_exports</a>, <a href="sdk.html#module_exports_snapshot">module_exports_snapshot</a>, <a href="sdk.html#sdk">sdk</a>, <a href="sdk.html#sdk_snapshot">sdk_snapshot</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/selinux</td>
+        <td>
+        <a href="selinux.html#contexts_defaults">contexts_defaults</a>, <a href="selinux.html#file_contexts">file_contexts</a>, <a href="selinux.html#file_contexts_test">file_contexts_test</a>, <a href="selinux.html#fuzzer_bindings_test">fuzzer_bindings_test</a>, <a href="selinux.html#hwservice_contexts">hwservice_contexts</a>, <a href="selinux.html#hwservice_contexts_test">hwservice_contexts_test</a>, <a href="selinux.html#keystore2_key_contexts">keystore2_key_contexts</a>, <a href="selinux.html#mac_permissions">mac_permissions</a>, <a href="selinux.html#property_contexts">property_contexts</a>, <a href="selinux.html#property_contexts_test">property_contexts_test</a>, <a href="selinux.html#se_bug_map">se_bug_map</a>, <a href="selinux.html#se_build_files">se_build_files</a>, <a href="selinux.html#se_cil_compat_map">se_cil_compat_map</a>, <a href="selinux.html#se_compat_cil">se_compat_cil</a>, <a href="selinux.html#se_compat_test">se_compat_test</a>, <a href="selinux.html#se_flags">se_flags</a>, <a href="selinux.html#se_flags_collector">se_flags_collector</a>, <a href="selinux.html#se_freeze_test">se_freeze_test</a>, <a href="selinux.html#se_neverallow_test">se_neverallow_test</a>, <a href="selinux.html#se_policy_binary">se_policy_binary</a>, <a href="selinux.html#se_policy_cil">se_policy_cil</a>, <a href="selinux.html#se_policy_conf">se_policy_conf</a>, <a href="selinux.html#se_policy_conf_defaults">se_policy_conf_defaults</a>, <a href="selinux.html#se_versioned_policy">se_versioned_policy</a>, <a href="selinux.html#seapp_contexts">seapp_contexts</a>, <a href="selinux.html#sepolicy_vers">sepolicy_vers</a>, <a href="selinux.html#service_contexts">service_contexts</a>, <a href="selinux.html#service_contexts_test">service_contexts_test</a>, <a href="selinux.html#tee_service_contexts">tee_service_contexts</a>, <a href="selinux.html#vndservice_contexts">vndservice_contexts</a>, <a href="selinux.html#vndservice_contexts_test">vndservice_contexts_test</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/sensor_multihal/mediatek</td>
+        <td>
+        <a href="mtksensormultihal.html#mtk_sensormultihal_defaults">mtk_sensormultihal_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/services/mediatek</td>
+        <td>
+        <a href="mtkServices.html#mediatek_services_defaults">mediatek_services_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/sh</td>
+        <td>
+        <a href="sh.html#sh_binary">sh_binary</a>, <a href="sh.html#sh_binary_host">sh_binary_host</a>, <a href="sh.html#sh_defaults">sh_defaults</a>, <a href="sh.html#sh_test">sh_test</a>, <a href="sh.html#sh_test_host">sh_test_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/sysprop</td>
+        <td>
+        <a href="sysprop.html#sysprop_library">sysprop_library</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/systemfeatures</td>
+        <td>
+        <a href="systemfeatures.html#java_system_features_srcs">java_system_features_srcs</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/tee/mediatek</td>
+        <td>
+        <a href="mtkTee.html#mtk_tee_defaults">mtk_tee_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/teei_damon</td>
+        <td>
+        <a href="teei_daemon.html#microtrust_teei_daemon_defaults">microtrust_teei_daemon_defaults</a>, <a href="teei_daemon.html#microtrust_teei_daemon_vfs_defaults">microtrust_teei_daemon_vfs_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/telecomm/common/mediatek</td>
+        <td>
+        <a href="mtkTelecommCommonFeature.html#mtk_telecomm_common_defaults">mtk_telecomm_common_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/tradefed/suite_harness</td>
+        <td>
+        <a href="suite_harness.html#tradefed_binary_host">tradefed_binary_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/tradefed_modules</td>
+        <td>
+        <a href="tradefed_modules.html#test_module_config">test_module_config</a>, <a href="tradefed_modules.html#test_module_config_host">test_module_config_host</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/uree/mediatek</td>
+        <td>
+        <a href="mtkUreeFeature.html#mtk_uree_defaults">mtk_uree_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/vendor.trustonic.tee-service/mediatek</td>
+        <td>
+        <a href="mtkTeeService.html#mtk_aidl_teeservice_defaults">mtk_aidl_teeservice_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/vendor.trustonic.tee@1.1-service/mediatek</td>
+        <td>
+        <a href="mtkTeeService.html#mtk_teeservice_defaults">mtk_teeservice_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/vintf-compatibility-matrix</td>
+        <td>
+        <a href="vintf.html#vintf_compatibility_matrix">vintf_compatibility_matrix</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/wfd_unit_tests/mediatek</td>
+        <td>
+        <a href="wfd_unit_tests.html#wfd_unit_defaults">wfd_unit_defaults</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/xml</td>
+        <td>
+        <a href="xml.html#prebuilt_etc_xml">prebuilt_etc_xml</a>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>android/soong/xsdc</td>
+        <td>
+        <a href="xsdc.html#xsd_config">xsd_config</a>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+</div>
+</body>
+</html>

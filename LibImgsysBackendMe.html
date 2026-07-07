@@ -1,0 +1,946 @@
+
+<html>
+<head>
+<title>Build Docs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<style>
+.accordion,.simple{margin-left:1.5em;text-indent:-1.5em;margin-top:.25em}
+.collapsible{border-width:0 0 0 1;margin-left:.25em;padding-left:.25em;border-style:solid;
+  border-color:grey;display:none;}
+span.fixed{display: block; float: left; clear: left; width: 1em;}
+ul {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 30ch;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+<script type="text/javascript">
+window.addEventListener('message', (e) => {
+  if (e != null && e.data != null && e.data.type === "SET_BASE" && e.data.base != null) {
+    const existingBase = document.querySelector('base');
+    if (existingBase != null) {
+      existingBase.parentElement.removeChild(existingBase);
+    }
+
+    const base = document.createElement('base');
+    base.setAttribute('href', e.data.base);
+    document.head.appendChild(base);
+  }
+});
+</script>
+
+</head>
+<body><ul>
+<li><h3>LibImgsysBackendMe package</h3></li>
+<li><a href="LibImgsysBackendMe.html#imgsys_build_libimgsys_me">imgsys_build_libimgsys_me</a></li>
+</ul>
+
+<div style="margin-left:30ch;padding:1px 16px;">
+
+	
+	<p>
+  <h2 id="imgsys_build_libimgsys_me">imgsys_build_libimgsys_me</h2>
+  
+<div class="breadcrumb">
+    
+				<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.name>name</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.srcs>srcs</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.cflags>cflags</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.device_specific>device_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.dist>dist</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.dists>dists</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.enabled>enabled</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.export_include_dirs>export_include_dirs</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.header_libs>header_libs</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.host_required>host_required</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.init_rc>init_rc</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.licenses>licenses</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.local_include_dirs>local_include_dirs</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.no_full_install>no_full_install</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.overrides>overrides</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.owner>owner</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_specific>product_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.arc>product_variables.arc</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.binder32bit>product_variables.binder32bit</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.build_from_text_stub>product_variables.build_from_text_stub</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.enforce_vintf_manifest>product_variables.enforce_vintf_manifest</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.eng>product_variables.eng</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.featuretransformpackagename>product_variables.featuretransformpackagename</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.malloc_low_memory>product_variables.malloc_low_memory</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.malloc_pattern_fill_contents>product_variables.malloc_pattern_fill_contents</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.malloc_zero_contents>product_variables.malloc_zero_contents</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.native_coverage>product_variables.native_coverage</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.override_rs_driver>product_variables.override_rs_driver</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.platform_sdk_version>product_variables.platform_sdk_version</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.safestack>product_variables.safestack</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.shipping_api_level>product_variables.shipping_api_level</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.treble_linker_namespaces>product_variables.treble_linker_namespaces</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.proprietary>proprietary</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.ramdisk>ramdisk</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.recovery>recovery</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.relative_install_path>relative_install_path</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.required>required</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.shared_libs>shared_libs</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.soc_specific>soc_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.static_libs>static_libs</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.target.android>target.android</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.target.host>target.host</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.target_required>target_required</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.team>team</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.vendor>vendor</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=LibImgsysBackendMe.html#imgsys_build_libimgsys_me.visibility>visibility</a></div>
+    <div class="simple" id="imgsys_build_libimgsys_me.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.srcs">
+        <span class="fixed">&nbsp;</span><b>srcs </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&nbsp;</span><b>cflags </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="imgsys_build_libimgsys_me.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.export_include_dirs">
+        <span class="fixed">&nbsp;</span><b>export_include_dirs </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.header_libs">
+        <span class="fixed">&nbsp;</span><b>header_libs </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.local_include_dirs">
+        <span class="fixed">&nbsp;</span><b>local_include_dirs </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, List of module names that are prevented from being installed when this module gets
+installed.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.arc">
+        <span class="fixed">&#x2295</span><b>product_variables.arc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.header_libs">
+        <span class="fixed">&#x2295</span><b>header_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.shared_libs">
+        <span class="fixed">&#x2295</span><b>shared_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.binder32bit">
+        <span class="fixed">&#x2295</span><b>product_variables.binder32bit</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.build_from_text_stub">
+        <span class="fixed">&#x2295</span><b>product_variables.build_from_text_stub</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.shared_libs">
+        <span class="fixed">&#x2295</span><b>shared_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.enforce_vintf_manifest">
+        <span class="fixed">&#x2295</span><b>product_variables.enforce_vintf_manifest</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.eng">
+        <span class="fixed">&#x2295</span><b>product_variables.eng</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.featuretransformpackagename">
+        <span class="fixed">&#x2295</span><b>product_variables.featuretransformpackagename</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.shared_libs">
+        <span class="fixed">&#x2295</span><b>shared_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.malloc_low_memory">
+        <span class="fixed">&#x2295</span><b>product_variables.malloc_low_memory</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.shared_libs">
+        <span class="fixed">&#x2295</span><b>shared_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.header_libs">
+        <span class="fixed">&#x2295</span><b>header_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.malloc_pattern_fill_contents">
+        <span class="fixed">&#x2295</span><b>product_variables.malloc_pattern_fill_contents</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.malloc_zero_contents">
+        <span class="fixed">&#x2295</span><b>product_variables.malloc_zero_contents</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.native_coverage">
+        <span class="fixed">&#x2295</span><b>product_variables.native_coverage</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.override_rs_driver">
+        <span class="fixed">&#x2295</span><b>product_variables.override_rs_driver</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.platform_sdk_version">
+        <span class="fixed">&#x2295</span><b>product_variables.platform_sdk_version</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.safestack">
+        <span class="fixed">&#x2295</span><b>product_variables.safestack</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.shipping_api_level">
+        <span class="fixed">&#x2295</span><b>product_variables.shipping_api_level</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.treble_linker_namespaces">
+        <span class="fixed">&#x2295</span><b>product_variables.treble_linker_namespaces</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.cflags">
+        <span class="fixed">&#x2295</span><b>cflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="imgsys_build_libimgsys_me.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="imgsys_build_libimgsys_me.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.relative_install_path">
+        <span class="fixed">&nbsp;</span><b>relative_install_path </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.shared_libs">
+        <span class="fixed">&nbsp;</span><b>shared_libs </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.static_libs">
+        <span class="fixed">&nbsp;</span><b>static_libs </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="imgsys_build_libimgsys_me.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="imgsys_build_libimgsys_me.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="simple" id="imgsys_build_libimgsys_me.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="imgsys_build_libimgsys_me.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+</div></div>
+<script>
+  accordions = document.getElementsByClassName('accordion');
+  for (i=0; i < accordions.length; ++i) {
+    accordions[i].addEventListener("click", function() {
+      var panel = this.nextElementSibling;
+      var child = this.firstElementChild;
+      if (panel.style.display === "block") {
+          panel.style.display = "none";
+          child.textContent = '\u2295';
+      } else {
+          panel.style.display = "block";
+          child.textContent = '\u2296';
+      }
+    });
+  }
+</script>
+</body>

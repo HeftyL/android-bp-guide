@@ -1,0 +1,2482 @@
+
+<html>
+<head>
+<title>Build Docs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<style>
+.accordion,.simple{margin-left:1.5em;text-indent:-1.5em;margin-top:.25em}
+.collapsible{border-width:0 0 0 1;margin-left:.25em;padding-left:.25em;border-style:solid;
+  border-color:grey;display:none;}
+span.fixed{display: block; float: left; clear: left; width: 1em;}
+ul {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 30ch;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+<script type="text/javascript">
+window.addEventListener('message', (e) => {
+  if (e != null && e.data != null && e.data.type === "SET_BASE" && e.data.base != null) {
+    const existingBase = document.querySelector('base');
+    if (existingBase != null) {
+      existingBase.parentElement.removeChild(existingBase);
+    }
+
+    const base = document.createElement('base');
+    base.setAttribute('href', e.data.base);
+    document.head.appendChild(base);
+  }
+});
+</script>
+
+</head>
+<body><ul>
+<li><h3>aconfig package</h3></li>
+<li><a href="aconfig.html#aconfig_declarations">aconfig_declarations</a></li>
+<li><a href="aconfig.html#aconfig_value_set">aconfig_value_set</a></li>
+<li><a href="aconfig.html#aconfig_values">aconfig_values</a></li>
+<li><a href="aconfig.html#all_aconfig_declarations">all_aconfig_declarations</a></li>
+<li><a href="aconfig.html#all_aconfig_declarations_extension">all_aconfig_declarations_extension</a></li>
+</ul>
+
+<div style="margin-left:30ch;padding:1px 16px;">
+
+	
+	<p>
+  <h2 id="aconfig_declarations">aconfig_declarations</h2>
+  
+<div class="breadcrumb">
+    
+				<a href=aconfig.html#aconfig_declarations.name>name</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.srcs>srcs</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.defaults>defaults</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.container>container</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.device_specific>device_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.dist>dist</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.dists>dists</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.enabled>enabled</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.exportable>exportable</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.host_required>host_required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.init_rc>init_rc</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.licenses>licenses</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.no_full_install>no_full_install</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.overrides>overrides</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.owner>owner</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.package>package</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.product_specific>product_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.proprietary>proprietary</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.ramdisk>ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.recovery>recovery</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.releaseconfigvalues>releaseconfigvalues</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.required>required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.soc_specific>soc_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.target.android>target.android</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.target.host>target.host</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.target_required>target_required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.team>team</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.vendor>vendor</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=aconfig.html#aconfig_declarations.visibility>visibility</a></div>
+    <div class="simple" id="aconfig_declarations.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="simple" id="aconfig_declarations.defaults">
+        <span class="fixed">&nbsp;</span><b>defaults </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="aconfig_declarations.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.container">
+        <span class="fixed">&#x2295</span><b>container</b>
+        <i>string</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.string">
+        <span class="fixed">&nbsp;</span><b>string </b>
+        <i>string</i></div></div>
+    <div class="simple" id="aconfig_declarations.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="aconfig_declarations.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="aconfig_declarations.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="aconfig_declarations.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="aconfig_declarations.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="aconfig_declarations.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="aconfig_declarations.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="aconfig_declarations.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="aconfig_declarations.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="aconfig_declarations.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="aconfig_declarations.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.exportable">
+        <span class="fixed">&#x2295</span><b>exportable</b>
+        <i>bool</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.bool">
+        <span class="fixed">&nbsp;</span><b>bool </b>
+        <i>bool</i></div></div>
+    <div class="simple" id="aconfig_declarations.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_declarations.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_declarations.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="aconfig_declarations.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="aconfig_declarations.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="aconfig_declarations.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_declarations.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, List of module names that are prevented from being installed when this module gets
+installed.
+
+</div>
+    <div class="simple" id="aconfig_declarations.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.package">
+        <span class="fixed">&#x2295</span><b>package</b>
+        <i>string</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.string">
+        <span class="fixed">&nbsp;</span><b>string </b>
+        <i>string</i></div></div>
+    <div class="simple" id="aconfig_declarations.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_declarations.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_declarations.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_declarations.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_declarations.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_declarations.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_declarations.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_declarations.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_declarations.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_declarations.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_declarations.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_declarations.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="aconfig_declarations.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>, whether this is a proprietary vendor module, and should be installed into /vendor
+
+</div>
+    <div class="simple" id="aconfig_declarations.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="simple" id="aconfig_declarations.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.releaseconfigvalues">
+        <span class="fixed">&#x2295</span><b>releaseconfigvalues</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]aconfig.AconfigReleaseConfigValue</i></div></div>
+    <div class="simple" id="aconfig_declarations.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_declarations.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="aconfig_declarations.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_declarations.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="accordion"  id="aconfig_declarations.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="aconfig_declarations.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="aconfig_declarations.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_declarations.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="simple" id="aconfig_declarations.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_declarations.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="simple" id="aconfig_declarations.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="simple" id="aconfig_declarations.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="aconfig_declarations.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_declarations.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="aconfig_declarations.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="aconfig_declarations.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_declarations.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+</div>
+	
+	<p>
+  <h2 id="aconfig_value_set">aconfig_value_set</h2>
+  
+<div class="breadcrumb">
+    
+				<a href=aconfig.html#aconfig_value_set.name>name</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.srcs>srcs</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.defaults>defaults</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.device_specific>device_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.dist>dist</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.dists>dists</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.enabled>enabled</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.host_required>host_required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.init_rc>init_rc</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.licenses>licenses</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.no_full_install>no_full_install</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.overrides>overrides</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.owner>owner</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.product_specific>product_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.proprietary>proprietary</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.ramdisk>ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.recovery>recovery</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.required>required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.soc_specific>soc_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.target.android>target.android</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.target.host>target.host</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.target_required>target_required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.team>team</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.values>values</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.vendor>vendor</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=aconfig.html#aconfig_value_set.visibility>visibility</a></div>
+    <div class="simple" id="aconfig_value_set.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+</div>
+    <div class="accordion"  id="aconfig_value_set.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="simple" id="aconfig_value_set.defaults">
+        <span class="fixed">&nbsp;</span><b>defaults </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="aconfig_value_set.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="simple" id="aconfig_value_set.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="aconfig_value_set.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="aconfig_value_set.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="aconfig_value_set.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="aconfig_value_set.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="aconfig_value_set.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="aconfig_value_set.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="aconfig_value_set.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="aconfig_value_set.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="aconfig_value_set.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="aconfig_value_set.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="aconfig_value_set.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="simple" id="aconfig_value_set.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_value_set.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_value_set.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="aconfig_value_set.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="aconfig_value_set.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="aconfig_value_set.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_value_set.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, List of module names that are prevented from being installed when this module gets
+installed.
+
+</div>
+    <div class="simple" id="aconfig_value_set.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="simple" id="aconfig_value_set.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="aconfig_value_set.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_value_set.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_value_set.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_value_set.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_value_set.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_value_set.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_value_set.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_value_set.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_value_set.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_value_set.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_value_set.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_value_set.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="aconfig_value_set.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>, whether this is a proprietary vendor module, and should be installed into /vendor
+
+</div>
+    <div class="simple" id="aconfig_value_set.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="simple" id="aconfig_value_set.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="simple" id="aconfig_value_set.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_value_set.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="aconfig_value_set.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_value_set.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="accordion"  id="aconfig_value_set.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="aconfig_value_set.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="aconfig_value_set.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="simple" id="aconfig_value_set.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_value_set.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="simple" id="aconfig_value_set.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="accordion"  id="aconfig_value_set.values">
+        <span class="fixed">&#x2295</span><b>values</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_value_set.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="simple" id="aconfig_value_set.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="aconfig_value_set.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_value_set.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="aconfig_value_set.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="aconfig_value_set.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_value_set.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+</div>
+	
+	<p>
+  <h2 id="aconfig_values">aconfig_values</h2>
+  
+<div class="breadcrumb">
+    
+				<a href=aconfig.html#aconfig_values.name>name</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.srcs>srcs</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.defaults>defaults</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.device_specific>device_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.dist>dist</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.dists>dists</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.enabled>enabled</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.host_required>host_required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.init_rc>init_rc</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.licenses>licenses</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.no_full_install>no_full_install</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.overrides>overrides</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.owner>owner</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.package>package</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.product_specific>product_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.proprietary>proprietary</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.ramdisk>ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.recovery>recovery</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.required>required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.soc_specific>soc_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.target.android>target.android</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.target.host>target.host</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.target_required>target_required</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.team>team</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.vendor>vendor</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=aconfig.html#aconfig_values.visibility>visibility</a></div>
+    <div class="simple" id="aconfig_values.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+</div>
+    <div class="accordion"  id="aconfig_values.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="simple" id="aconfig_values.defaults">
+        <span class="fixed">&nbsp;</span><b>defaults </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="aconfig_values.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="simple" id="aconfig_values.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="aconfig_values.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="aconfig_values.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="aconfig_values.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="aconfig_values.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="aconfig_values.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="aconfig_values.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="aconfig_values.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="aconfig_values.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="aconfig_values.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="aconfig_values.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="aconfig_values.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="simple" id="aconfig_values.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_values.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_values.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="aconfig_values.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="aconfig_values.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="aconfig_values.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_values.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, List of module names that are prevented from being installed when this module gets
+installed.
+
+</div>
+    <div class="simple" id="aconfig_values.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="accordion"  id="aconfig_values.package">
+        <span class="fixed">&#x2295</span><b>package</b>
+        <i>string</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.string">
+        <span class="fixed">&nbsp;</span><b>string </b>
+        <i>string</i></div></div>
+    <div class="simple" id="aconfig_values.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="aconfig_values.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_values.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_values.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_values.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_values.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_values.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_values.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="aconfig_values.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_values.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_values.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="aconfig_values.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="aconfig_values.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="aconfig_values.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>, whether this is a proprietary vendor module, and should be installed into /vendor
+
+</div>
+    <div class="simple" id="aconfig_values.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="simple" id="aconfig_values.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="simple" id="aconfig_values.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_values.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="aconfig_values.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_values.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="accordion"  id="aconfig_values.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="aconfig_values.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="aconfig_values.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="aconfig_values.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="simple" id="aconfig_values.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_values.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="simple" id="aconfig_values.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="simple" id="aconfig_values.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="aconfig_values.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="aconfig_values.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="aconfig_values.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="aconfig_values.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="aconfig_values.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+</div>
+	
+	<p>
+  <h2 id="all_aconfig_declarations">all_aconfig_declarations</h2>
+  A singleton module that collects all of the aconfig flags declared in the
+tree into a single combined file for export to the external flag setting
+server (inside Google it&#39;s Gantry).
+
+Note that this is ALL aconfig_declarations modules present in the tree, not just
+ones that are relevant to the product currently being built, so that that infra
+doesn&#39;t need to pull from multiple builds and merge them.
+
+<div class="breadcrumb">
+    
+				<a href=aconfig.html#all_aconfig_declarations.name>name</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.api_signature_files>api_signature_files</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.arch>arch</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.device_specific>device_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.dist>dist</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.dists>dists</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.enabled>enabled</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.finalized_flags_file>finalized_flags_file</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.host_required>host_required</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.init_rc>init_rc</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.licenses>licenses</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.multilib>multilib</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.no_full_install>no_full_install</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.overrides>overrides</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.owner>owner</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.product_specific>product_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.proprietary>proprietary</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.ramdisk>ramdisk</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.recovery>recovery</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.required>required</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.soc_specific>soc_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.target>target</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.target.android>target.android</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.target.host>target.host</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.target_required>target_required</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.team>team</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.vendor>vendor</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations.visibility>visibility</a></div>
+    <div class="simple" id="all_aconfig_declarations.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+<i>Default: all_aconfig_declarations</i></div>
+    <div class="simple" id="all_aconfig_declarations.api_signature_files">
+        <span class="fixed">&nbsp;</span><b>api_signature_files </b>
+        <i>configurable list of string</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations.arch">
+        <span class="fixed">&nbsp;</span><b>arch </b>
+        <i>interface</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="all_aconfig_declarations.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="all_aconfig_declarations.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.finalized_flags_file">
+        <span class="fixed">&nbsp;</span><b>finalized_flags_file </b>
+        <i>string</i>
+<i>Default: :latest-finalized-flags</i></div>
+    <div class="simple" id="all_aconfig_declarations.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.multilib">
+        <span class="fixed">&nbsp;</span><b>multilib </b>
+        <i>interface</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, List of module names that are prevented from being installed when this module gets
+installed.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="all_aconfig_declarations.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="all_aconfig_declarations.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="all_aconfig_declarations.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>, whether this is a proprietary vendor module, and should be installed into /vendor
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.target">
+        <span class="fixed">&nbsp;</span><b>target </b>
+        <i>interface</i>
+</div>
+    <div class="accordion"  id="all_aconfig_declarations.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="all_aconfig_declarations.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="simple" id="all_aconfig_declarations.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+<i>Default: [//vendor:__subpackages__]</i></div>
+	
+	<p>
+  <h2 id="all_aconfig_declarations_extension">all_aconfig_declarations_extension</h2>
+  
+<div class="breadcrumb">
+    
+				<a href=aconfig.html#all_aconfig_declarations_extension.name>name</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.api_signature_files>api_signature_files</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.arch>arch</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.base>base</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.device_specific>device_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.dist>dist</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.dist_dir>dist_dir</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.dists>dists</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.enabled>enabled</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.finalized_flags_file>finalized_flags_file</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.host_required>host_required</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.init_rc>init_rc</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.licenses>licenses</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.multilib>multilib</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.no_full_install>no_full_install</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.overrides>overrides</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.owner>owner</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.product_specific>product_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.proprietary>proprietary</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.ramdisk>ramdisk</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.recovery>recovery</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.required>required</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.soc_specific>soc_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.target>target</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.target.android>target.android</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.target.host>target.host</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.target_required>target_required</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.team>team</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.vendor>vendor</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=aconfig.html#all_aconfig_declarations_extension.visibility>visibility</a></div>
+    <div class="simple" id="all_aconfig_declarations_extension.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.api_signature_files">
+        <span class="fixed">&nbsp;</span><b>api_signature_files </b>
+        <i>configurable list of string</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.arch">
+        <span class="fixed">&nbsp;</span><b>arch </b>
+        <i>interface</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.base">
+        <span class="fixed">&nbsp;</span><b>base </b>
+        <i>string</i>, all_aconfig_declarations module that this module extends. Defaults to
+all_aconfig_declarations.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="all_aconfig_declarations_extension.dist_dir">
+        <span class="fixed">&nbsp;</span><b>dist_dir </b>
+        <i>string</i>, Directory where the dist artifact should be placed in.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.finalized_flags_file">
+        <span class="fixed">&nbsp;</span><b>finalized_flags_file </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.multilib">
+        <span class="fixed">&nbsp;</span><b>multilib </b>
+        <i>interface</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, List of module names that are prevented from being installed when this module gets
+installed.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations_extension.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations_extension.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations_extension.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="all_aconfig_declarations_extension.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="all_aconfig_declarations_extension.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>, whether this is a proprietary vendor module, and should be installed into /vendor
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.target">
+        <span class="fixed">&nbsp;</span><b>target </b>
+        <i>interface</i>
+</div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="all_aconfig_declarations_extension.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="all_aconfig_declarations_extension.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="simple" id="all_aconfig_declarations_extension.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="all_aconfig_declarations_extension.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+</div></div>
+<script>
+  accordions = document.getElementsByClassName('accordion');
+  for (i=0; i < accordions.length; ++i) {
+    accordions[i].addEventListener("click", function() {
+      var panel = this.nextElementSibling;
+      var child = this.firstElementChild;
+      if (panel.style.display === "block") {
+          panel.style.display = "none";
+          child.textContent = '\u2295';
+      } else {
+          panel.style.display = "block";
+          child.textContent = '\u2296';
+      }
+    });
+  }
+</script>
+</body>

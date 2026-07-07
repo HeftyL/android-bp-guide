@@ -1,0 +1,3155 @@
+
+<html>
+<head>
+<title>Build Docs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<style>
+.accordion,.simple{margin-left:1.5em;text-indent:-1.5em;margin-top:.25em}
+.collapsible{border-width:0 0 0 1;margin-left:.25em;padding-left:.25em;border-style:solid;
+  border-color:grey;display:none;}
+span.fixed{display: block; float: left; clear: left; width: 1em;}
+ul {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 30ch;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+<script type="text/javascript">
+window.addEventListener('message', (e) => {
+  if (e != null && e.data != null && e.data.type === "SET_BASE" && e.data.base != null) {
+    const existingBase = document.querySelector('base');
+    if (existingBase != null) {
+      existingBase.parentElement.removeChild(existingBase);
+    }
+
+    const base = document.createElement('base');
+    base.setAttribute('href', e.data.base);
+    document.head.appendChild(base);
+  }
+});
+</script>
+
+</head>
+<body><ul>
+<li><h3>mtkCarServiceResOverlay package</h3></li>
+<li><a href="mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults">mtk_carservice_res_resoverlay_defaults</a></li>
+</ul>
+
+<div style="margin-left:30ch;padding:1px 16px;">
+
+	
+	<p>
+  <h2 id="mtk_carservice_res_resoverlay_defaults">mtk_carservice_res_resoverlay_defaults</h2>
+  
+<div class="breadcrumb">
+    
+				<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.name>name</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.srcs>srcs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_srcs>exclude_srcs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.defaults>defaults</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.host_supported>host_supported</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_supported>device_supported</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.aapt_include_all_resources>aapt_include_all_resources</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.aaptflags>aaptflags</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.aars>aars</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.aconfig_Cache_files>aconfig_Cache_files</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.aconfig_declarations>aconfig_declarations</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.additional_certificates>additional_certificates</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.additional_manifests>additional_manifests</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.additional_stubs>additional_stubs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.aidl>aidl</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.annotations_enabled>annotations_enabled</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.apex_available>apex_available</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api>api</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_contributions>api_contributions</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_dir>api_dir</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_lint>api_lint</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_only>api_only</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_packages>api_packages</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_srcs>api_srcs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.api_surface>api_surface</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.apk>apk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.arch>arch</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.asset_dirs>asset_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.assets>assets</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.auto_gen_config>auto_gen_config</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.build_from_text_stub>build_from_text_stub</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.certificate>certificate</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.common_srcs>common_srcs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.compile_data>compile_data</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.compile_dex>compile_dex</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.compile_multilib>compile_multilib</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.compress_apk>compress_apk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.contents>contents</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.core_platform_api>core_platform_api</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.coverage>coverage</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.coverage.hidden_api>coverage.hidden_api</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data>data</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data_device_bins_32>data_device_bins_32</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data_device_bins_64>data_device_bins_64</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data_device_bins_both>data_device_bins_both</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data_device_bins_first>data_device_bins_first</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data_device_bins_prefer32>data_device_bins_prefer32</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.data_native_bins>data_native_bins</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.debug_ramdisk>debug_ramdisk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.default_dev_cert>default_dev_cert</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.default_to_stubs>default_to_stubs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.defaults_visibility>defaults_visibility</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_common_data>device_common_data</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_common_java_resources>device_common_java_resources</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_first_data>device_first_data</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_first_java_resources>device_first_java_resources</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_first_prefer32_data>device_first_prefer32_data</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.device_specific>device_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dex_preopt>dex_preopt</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dist>dist</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dist_group>dist_group</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dist_stem>dist_stem</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dists>dists</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.doctag_files>doctag_files</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dont_merge_manifests>dont_merge_manifests</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.droiddoc_option_files>droiddoc_option_files</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.droiddoc_options>droiddoc_options</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.dxflags>dxflags</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.embed_notices>embed_notices</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.enable_validation>enable_validation</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.enabled>enabled</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.enforce_default_target_sdk_version>enforce_default_target_sdk_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.enforce_uses_libs>enforce_uses_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.errorprone>errorprone</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_common_srcs>exclude_common_srcs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_dirs>exclude_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_files>exclude_files</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_java_resource_dirs>exclude_java_resource_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_java_resources>exclude_java_resources</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_kotlinc_generated_files>exclude_kotlinc_generated_files</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exclude_uses_libs>exclude_uses_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.export_package_resources>export_package_resources</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.exported_plugins>exported_plugins</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.extract_apk>extract_apk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.extract_jni>extract_jni</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.filename>filename</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.flags_packages>flags_packages</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.fragments>fragments</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.generate_product_characteristics_rro>generate_product_characteristics_rro</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.generated_srcjars>generated_srcjars</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.headers_only>headers_only</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.hidden_api>hidden_api</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.hiddenapi_additional_annotations>hiddenapi_additional_annotations</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.host_common_data>host_common_data</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.host_required>host_required</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.hostdex>hostdex</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.image_name>image_name</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.impl_library_visibility>impl_library_visibility</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.impl_only_libs>impl_only_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.impl_only_static_libs>impl_only_static_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.include_srcs>include_srcs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.init_rc>init_rc</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.inst_package_name>inst_package_name</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.inst_resource_apk>inst_resource_apk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.installable>installable</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.instrumentation_for>instrumentation_for</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.instrumentation_target_package>instrumentation_target_package</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.is_stubs_module>is_stubs_module</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jacoco>jacoco</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jarjar_prefix>jarjar_prefix</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jarjar_rename>jarjar_rename</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jarjar_rules>jarjar_rules</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jarjar_shards>jarjar_shards</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jars>jars</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.java_resource_dirs>java_resource_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.java_resources>java_resources</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.java_version>java_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.javac_shard_size>javac_shard_size</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.javacflags>javacflags</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jetifier>jetifier</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jni_libs>jni_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jni_uses_platform_apis>jni_uses_platform_apis</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.jni_uses_sdk_apis>jni_uses_sdk_apis</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.kotlin_lang_version>kotlin_lang_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.kotlin_plugins>kotlin_plugins</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.kotlincflags>kotlincflags</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.libs>libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.licenses>licenses</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.lineage>lineage</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.lint>lint</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.logging_parent>logging_parent</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.main_dex_rules>main_dex_rules</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.mainline_package_name>mainline_package_name</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.manifest>manifest</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.manifest_values>manifest_values</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.max_device_sdk>max_device_sdk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.max_sdk_version>max_sdk_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.merge_annotations_dirs>merge_annotations_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.merge_inclusion_annotations_dirs>merge_inclusion_annotations_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.min_device_sdk>min_device_sdk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.min_sdk_version>min_sdk_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.module_lib>module_lib</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.multilib>multilib</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.native_bridge_supported>native_bridge_supported</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.no_dex_container>no_dex_container</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.no_dist>no_dist</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.no_full_install>no_full_install</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.odm_dlkm_specific>odm_dlkm_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.on_bootclasspath_before>on_bootclasspath_before</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.on_bootclasspath_since>on_bootclasspath_since</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.openjdk9>openjdk9</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.optimize>optimize</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.optional_uses_libs>optional_uses_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.overrides>overrides</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.owner>owner</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.package_name>package_name</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.package_splits>package_splits</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.patch_module>patch_module</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.per_testcase_directory>per_testcase_directory</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.permitted_packages>permitted_packages</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.platform_apis>platform_apis</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.plugins>plugins</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.prebuilt_info>prebuilt_info</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.preprocessed>preprocessed</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.presigned>presigned</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.previous_api>previous_api</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.privapp_allowlist>privapp_allowlist</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.privileged>privileged</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_specific>product_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.arc>product_variables.arc</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.build_from_text_stub>product_variables.build_from_text_stub</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.debuggable>product_variables.debuggable</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.eng>product_variables.eng</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.featuretransformpackagename>product_variables.featuretransformpackagename</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.malloc_low_memory>product_variables.malloc_low_memory</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.native_coverage>product_variables.native_coverage</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.platform_sdk_version_or_codename>product_variables.platform_sdk_version_or_codename</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.release_aidl_use_unfrozen>product_variables.release_aidl_use_unfrozen</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.selinuxignoreneverallows>product_variables.selinuxignoreneverallows</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.product_variables.unbundled_build>product_variables.unbundled_build</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.proprietary>proprietary</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.proto>proto</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.provides_uses_lib>provides_uses_lib</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.public>public</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.ramdisk>ramdisk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.ravenizer>ravenizer</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.recovery>recovery</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.relative_install_path>relative_install_path</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.rename_resources_package>rename_resources_package</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.replace_max_sdk_version_placeholder>replace_max_sdk_version_placeholder</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.required>required</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.resource_apk>resource_apk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.resource_dirs>resource_dirs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.resource_libs>resource_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.resource_zips>resource_zips</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.rotationMinSdkVersion>rotationMinSdkVersion</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.sdk_version>sdk_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.services>services</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.shared_library>shared_library</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.skip_preprocessed_apk_checks>skip_preprocessed_apk_checks</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.soc_specific>soc_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.source_module_name>source_module_name</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.static_kotlin_stdlib>static_kotlin_stdlib</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.static_libs>static_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stem>stem</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stl>stl</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.strip_unused_jni_arch>strip_unused_jni_arch</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stub_only_libs>stub_only_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stub_only_static_libs>stub_only_static_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stubs_library_visibility>stubs_library_visibility</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stubs_source_visibility>stubs_source_visibility</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.stubs_type>stubs_type</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.system>system</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.system_dlkm_specific>system_dlkm_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.system_ext_specific>system_ext_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.system_modules>system_modules</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.system_server>system_server</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.target>target</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.target.android>target.android</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.target.host>target.host</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.target.hostdex>target.hostdex</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.target_required>target_required</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.target_sdk_version>target_sdk_version</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.team>team</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.test>test</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.test_config>test_config</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.test_config_template>test_config_template</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.test_mainline_modules>test_mainline_modules</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.test_options>test_options</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.test_suites>test_suites</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.theme>theme</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.uncompress_dex>uncompress_dex</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.unsafe_ignore_missing_latest_api>unsafe_ignore_missing_latest_api</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.updatable>updatable</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.use_embedded_dex>use_embedded_dex</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.use_embedded_native_libs>use_embedded_native_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.use_generic_config>use_generic_config</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.use_resource_processor>use_resource_processor</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.use_tools_jar>use_tools_jar</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.uses_libs>uses_libs</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.v4_signature>v4_signature</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.vendor>vendor</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.vendor_dlkm_specific>vendor_dlkm_specific</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.vendor_ramdisk>vendor_ramdisk</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.vintf_fragment_modules>vintf_fragment_modules</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.vintf_fragments>vintf_fragments</a>
+				,&nbsp;<a href=mtkCarServiceResOverlay.html#mtk_carservice_res_resoverlay_defaults.visibility>visibility</a></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.name">
+        <span class="fixed">&nbsp;</span><b>name </b>
+        <i>string</i>, The name of the module.  Must be unique across all modules.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&nbsp;</span><b>srcs </b>
+        <i>list of string</i>, list of source files used to compile the Java module.  May be .java, .kt, .logtags, .proto,
+or .aidl files.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_srcs">
+        <span class="fixed">&nbsp;</span><b>exclude_srcs </b>
+        <i>list of string</i>, list of source files that should not be used to build the Java module.
+This is most useful in the arch/multilib variants to remove non-common files
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.defaults">
+        <span class="fixed">&nbsp;</span><b>defaults </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.host_supported">
+        <span class="fixed">&nbsp;</span><b>host_supported </b>
+        <i>bool</i>, If set to true, build a variant of the module for the host.  Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_supported">
+        <span class="fixed">&nbsp;</span><b>device_supported </b>
+        <i>bool</i>, If set to true, build a variant of the module for the device.  Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.aapt_include_all_resources">
+        <span class="fixed">&nbsp;</span><b>aapt_include_all_resources </b>
+        <i>bool</i>, include all resource configurations, not just the product-configured
+ones.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.aaptflags">
+        <span class="fixed">&nbsp;</span><b>aaptflags </b>
+        <i>list of string</i>, flags passed to aapt when creating the apk
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.aars">
+        <span class="fixed">&nbsp;</span><b>aars </b>
+        <i>list of string</i>, ARR (android library prebuilt) filepath. Exactly one ARR is required.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.aconfig_Cache_files">
+        <span class="fixed">&nbsp;</span><b>aconfig_Cache_files </b>
+        <i>list of *ast.SelectorExpr</i>, intermediate aconfig cache file tacked in by GeneratedJavaLibraryModule
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.aconfig_declarations">
+        <span class="fixed">&nbsp;</span><b>aconfig_declarations </b>
+        <i>list of string</i>, a list of aconfig_declarations module names that the stubs generated in this module
+depend on.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.additional_certificates">
+        <span class="fixed">&nbsp;</span><b>additional_certificates </b>
+        <i>list of string</i>, Names of extra android_app_certificate modules to sign the apk with in the form &#34;:module&#34;.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.additional_manifests">
+        <span class="fixed">&nbsp;</span><b>additional_manifests </b>
+        <i>list of string</i>, paths to additional manifest files to merge with main manifest.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.additional_stubs">
+        <span class="fixed">&nbsp;</span><b>additional_stubs </b>
+        <i>list of string</i>, The list of additional stub libraries which this fragment&#39;s contents use but which are not
+provided by another bootclasspath_fragment.
+
+Note, &#34;android-non-updatable&#34; is treated specially. While no such module exists it is treated
+as if it was a java_sdk_library. So, when public API stubs are needed then it will be replaced
+with &#34;android-non-updatable.stubs&#34;, with &#34;androidn-non-updatable.system.stubs&#34; when the system
+stubs are needed and so on.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.aidl">
+        <span class="fixed">&#x2295</span><b>aidl</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.include_dirs">
+        <span class="fixed">&nbsp;</span><b>include_dirs </b>
+        <i>list of string</i>, Top level directories to pass to aidl tool
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.local_include_dirs">
+        <span class="fixed">&nbsp;</span><b>local_include_dirs </b>
+        <i>list of string</i>, Directories rooted at the Android.bp file to pass to aidl tool
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.export_include_dirs">
+        <span class="fixed">&nbsp;</span><b>export_include_dirs </b>
+        <i>list of string</i>, directories that should be added as include directories for any aidl sources of modules
+that depend on this module, as well as to aidl for this module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.generate_traces">
+        <span class="fixed">&nbsp;</span><b>generate_traces </b>
+        <i>bool</i>, whether to generate traces (for systrace) for this interface
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.generate_get_transaction_name">
+        <span class="fixed">&nbsp;</span><b>generate_get_transaction_name </b>
+        <i>bool</i>, whether to generate Binder#GetTransaction name method.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enforce_permissions">
+        <span class="fixed">&nbsp;</span><b>enforce_permissions </b>
+        <i>bool</i>, whether all interfaces should be annotated with required permissions.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enforce_permissions_exceptions">
+        <span class="fixed">&nbsp;</span><b>enforce_permissions_exceptions </b>
+        <i>list of string</i>, allowlist for interfaces that (temporarily) do not require annotation for permissions.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.flags">
+        <span class="fixed">&nbsp;</span><b>flags </b>
+        <i>list of string</i>, list of flags that will be passed to the AIDL compiler
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.annotations_enabled">
+        <span class="fixed">&nbsp;</span><b>annotations_enabled </b>
+        <i>bool</i>, is set to true, Metalava will allow framework SDK to contain annotations.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.apex_available">
+        <span class="fixed">&nbsp;</span><b>apex_available </b>
+        <i>list of string</i>, Availability of this module in APEXes. Only the listed APEXes can contain this module. If
+the module has stubs then other APEXes and the platform may access it through them
+(subject to visibility).
+
+&#34;//apex_available:anyapex&#34; is a pseudo APEX name that matches to any APEX.
+&#34;//apex_available:platform&#34; refers to non-APEX partitions like &#34;system.img&#34;.
+Prefix pattern (com.foo.*) can be used to match with any APEX name with the prefix(com.foo.).
+Default is [&#34;//apex_available:platform&#34;].
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.api">
+        <span class="fixed">&#x2295</span><b>api</b>
+        <i>BootclasspathNestedAPIProperties</i></div>
+      <div class="collapsible">Api properties provide information about the APIs provided by the bootclasspath_fragment.
+Properties in this section apply to public, system and test api scopes. They DO NOT apply to
+core_platform as that is a special, ART specific scope, that does not follow the pattern and so
+has its own section. It is in the process of being deprecated and replaced by the system scope
+but this will remain for the foreseeable future to maintain backwards compatibility.
+
+Every bootclasspath_fragment must specify at least one stubs_lib in this section and must
+specify stubs for all the APIs provided by its contents. Failure to do so will lead to those
+methods being inaccessible to other parts of Android, including but not limited to
+applications.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stub_libs">
+        <span class="fixed">&nbsp;</span><b>stub_libs </b>
+        <i>configurable list of string</i>, java_library or preferably, java_sdk_library modules providing stub classes that define the
+APIs provided by this bootclasspath_fragment.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_contributions">
+        <span class="fixed">&nbsp;</span><b>api_contributions </b>
+        <i>list of string</i>, list of Java API contribution modules that consists this API surface
+This is a list of Soong modules
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_dir">
+        <span class="fixed">&nbsp;</span><b>api_dir </b>
+        <i>string</i>, the relative path to the directory containing the api specification files.
+Defaults to &#34;api&#34;.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.api_lint">
+        <span class="fixed">&#x2295</span><b>api_lint</b>
+        <i></i></div>
+      <div class="collapsible">Properties related to api linting.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, Enable api linting.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.legacy_errors_allowed">
+        <span class="fixed">&nbsp;</span><b>legacy_errors_allowed </b>
+        <i>bool</i>, If API lint is enabled, this flag controls whether a set of legitimate lint errors
+are turned off. The default is true.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_only">
+        <span class="fixed">&nbsp;</span><b>api_only </b>
+        <i>bool</i>, Determines whether a runtime implementation library is built; defaults to false.
+
+If true then it also prevents the module from being used as a shared module, i.e.
+it is as if shared_library: false, was set.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_packages">
+        <span class="fixed">&nbsp;</span><b>api_packages </b>
+        <i>list of string</i>, list of package names that will be documented and publicized as API.
+This allows the API to be restricted to a subset of the source files provided.
+If this is unspecified then all the source files will be treated as being part
+of the API.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_srcs">
+        <span class="fixed">&nbsp;</span><b>api_srcs </b>
+        <i>list of string</i>, List of source files that are needed to compile the API, but are not part of runtime library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_surface">
+        <span class="fixed">&nbsp;</span><b>api_surface </b>
+        <i>string</i>, name of the API surface
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.apk">
+        <span class="fixed">&nbsp;</span><b>apk </b>
+        <i>configurable string</i>, A prebuilt apk to import
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.arch">
+        <span class="fixed">&nbsp;</span><b>arch </b>
+        <i>interface</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.asset_dirs">
+        <span class="fixed">&nbsp;</span><b>asset_dirs </b>
+        <i>list of string</i>, list of directories relative to the Blueprints file containing assets.
+Defaults to [&#34;assets&#34;] if a directory called assets exists.  Set to []
+to disable the default.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.assets">
+        <span class="fixed">&nbsp;</span><b>assets </b>
+        <i>list of string</i>, list of files to use as assets.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.auto_gen_config">
+        <span class="fixed">&nbsp;</span><b>auto_gen_config </b>
+        <i>bool</i>, Flag to indicate whether or not to create test config automatically. If AndroidTest.xml
+doesn&#39;t exist next to the Android.bp, this attribute doesn&#39;t need to be set to true
+explicitly.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.build_from_text_stub">
+        <span class="fixed">&nbsp;</span><b>build_from_text_stub </b>
+        <i>bool</i>, Determines if the module generates the stubs from the api signature files
+instead of the source Java files. Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.certificate">
+        <span class="fixed">&nbsp;</span><b>certificate </b>
+        <i>configurable string</i>, the name of a certificate in the default certificate directory or an android_app_certificate
+module name in the form &#34;:module&#34;.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.common_srcs">
+        <span class="fixed">&nbsp;</span><b>common_srcs </b>
+        <i>list of string</i>, list Kotlin of source files containing Kotlin code that should be treated as common code in
+a codebase that supports Kotlin multiplatform.  See
+https://kotlinlang.org/docs/reference/multiplatform.html.  May be only be .kt files.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.compile_data">
+        <span class="fixed">&nbsp;</span><b>compile_data </b>
+        <i>list of string</i>, A list of files or dependencies to make available to the build sandbox. This is
+useful if source files are symlinks, the targets of the symlinks must be listed here.
+Note that currently not all actions implemented by android_apps are sandboxed, so you
+may only see this being necessary in lint builds.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.compile_dex">
+        <span class="fixed">&nbsp;</span><b>compile_dex </b>
+        <i>bool</i>, If set to true, compile dex regardless of installable.  Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>, control whether this module compiles for 32-bit, 64-bit, or both.  Possible values
+are &#34;32&#34; (compile for 32-bit only), &#34;64&#34; (compile for 64-bit only), &#34;both&#34; (compile for both
+architectures), or &#34;first&#34; (compile for 64-bit on a 64-bit platform, and 32-bit on a 32-bit
+platform).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.compress_apk">
+        <span class="fixed">&nbsp;</span><b>compress_apk </b>
+        <i>configurable bool</i>, Compress the output APK using gzip. Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.contents">
+        <span class="fixed">&nbsp;</span><b>contents </b>
+        <i>configurable list of string</i>, The contents of this bootclasspath_fragment, could be either java_library, or java_sdk_library.
+
+A java_sdk_library specified here will also be treated as if it was specified on the stub_libs
+property.
+
+The order of this list matters as it is the order that is used in the bootclasspath.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.core_platform_api">
+        <span class="fixed">&#x2295</span><b>core_platform_api</b>
+        <i>BootclasspathNestedAPIProperties</i></div>
+      <div class="collapsible">Properties related to the core platform API surface.
+
+This must only be used by the following modules:
+* ART
+* Conscrypt
+* I18N
+
+The bootclasspath_fragments for each of the above modules must specify at least one stubs_lib
+and must specify stubs for all the APIs provided by its contents. Failure to do so will lead to
+those methods being inaccessible to the other modules in the list.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stub_libs">
+        <span class="fixed">&nbsp;</span><b>stub_libs </b>
+        <i>configurable list of string</i>, java_library or preferably, java_sdk_library modules providing stub classes that define the
+APIs provided by this bootclasspath_fragment.
+
+</div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.coverage">
+        <span class="fixed">&#x2295</span><b>coverage</b>
+        <i>BootclasspathFragmentCoverageAffectedProperties</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.contents">
+        <span class="fixed">&nbsp;</span><b>contents </b>
+        <i>configurable list of string</i>, The contents of this bootclasspath_fragment, could be either java_library, or java_sdk_library.
+
+A java_sdk_library specified here will also be treated as if it was specified on the stub_libs
+property.
+
+The order of this list matters as it is the order that is used in the bootclasspath.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.api">
+        <span class="fixed">&#x2295</span><b>api</b>
+        <i>BootclasspathNestedAPIProperties</i></div>
+      <div class="collapsible">Api properties provide information about the APIs provided by the bootclasspath_fragment.
+Properties in this section apply to public, system and test api scopes. They DO NOT apply to
+core_platform as that is a special, ART specific scope, that does not follow the pattern and so
+has its own section. It is in the process of being deprecated and replaced by the system scope
+but this will remain for the foreseeable future to maintain backwards compatibility.
+
+Every bootclasspath_fragment must specify at least one stubs_lib in this section and must
+specify stubs for all the APIs provided by its contents. Failure to do so will lead to those
+methods being inaccessible to other parts of Android, including but not limited to
+applications.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stub_libs">
+        <span class="fixed">&nbsp;</span><b>stub_libs </b>
+        <i>configurable list of string</i>, java_library or preferably, java_sdk_library modules providing stub classes that define the
+APIs provided by this bootclasspath_fragment.
+
+</div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.core_platform_api">
+        <span class="fixed">&#x2295</span><b>core_platform_api</b>
+        <i>BootclasspathNestedAPIProperties</i></div>
+      <div class="collapsible">Properties related to the core platform API surface.
+
+This must only be used by the following modules:
+* ART
+* Conscrypt
+* I18N
+
+The bootclasspath_fragments for each of the above modules must specify at least one stubs_lib
+and must specify stubs for all the APIs provided by its contents. Failure to do so will lead to
+those methods being inaccessible to the other modules in the list.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stub_libs">
+        <span class="fixed">&nbsp;</span><b>stub_libs </b>
+        <i>configurable list of string</i>, java_library or preferably, java_sdk_library modules providing stub classes that define the
+APIs provided by this bootclasspath_fragment.
+
+</div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.coverage.hidden_api">
+        <span class="fixed">&#x2295</span><b>coverage.hidden_api</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.package_prefixes">
+        <span class="fixed">&nbsp;</span><b>package_prefixes </b>
+        <i>list of string</i>, Contains prefixes of a package hierarchy that is provided solely by this
+bootclasspath_fragment.
+
+This affects the signature patterns file that is used to select the subset of monolithic
+hidden API flags. See split_packages property for more details.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.single_packages">
+        <span class="fixed">&nbsp;</span><b>single_packages </b>
+        <i>list of string</i>, A list of individual packages that are provided solely by this
+bootclasspath_fragment but which cannot be listed in package_prefixes
+because there are sub-packages which are provided by other modules.
+
+This should only be used for legacy packages. New packages should be
+covered by a package prefix.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.split_packages">
+        <span class="fixed">&nbsp;</span><b>split_packages </b>
+        <i>list of string</i>, The list of split packages provided by this bootclasspath_fragment.
+
+A split package is one that contains classes which are provided by multiple
+bootclasspath_fragment modules.
+
+This defaults to &#34;*&#34; - which treats all packages as being split. A module that has no split
+packages must specify an empty list.
+
+This affects the signature patterns file that is generated by a bootclasspath_fragment and
+used to select the subset of monolithic hidden API flags against which the flags generated
+by the bootclasspath_fragment are compared.
+
+The signature patterns file selects the subset of monolithic hidden API flags using a number
+of patterns, i.e.:
+* The qualified name (including package) of an outermost class, e.g. java/lang/Character.
+<pre>
+
+  This selects all the flags for all the members of this class and any nested classes.
+</pre>
+* A package wildcard, e.g. java/lang/*. This selects all the flags for all the members of all
+<pre>
+
+  the classes in this package (but not in sub-packages).
+</pre>
+* A recursive package wildcard, e.g. java/**. This selects all the flags for all the members
+<pre>
+
+  of all the classes in this package and sub-packages.
+
+</pre>
+The signature patterns file is constructed as follows:
+* All the signatures are retrieved from the all-flags.csv file.
+* The member and inner class names are removed.
+* If a class is in a split package then that is kept, otherwise the class part is removed
+<pre>
+
+  and replaced with a wildcard, i.e. *.
+</pre>
+* If a package matches a package prefix then the package is removed.
+* All the package prefixes are added with a recursive wildcard appended to each, i.e. **.
+* The resulting patterns are sorted.
+
+So, by default (i.e. without specifying any package_prefixes or split_packages) the signature
+patterns is a list of class names, because there are no package packages and all packages are
+assumed to be split.
+
+If any split packages are specified then only those packages are treated as split and all
+other packages are treated as belonging solely to the bootclasspath_fragment and so they use
+wildcard package patterns.
+
+So, if an empty list of split packages is specified then the signature patterns file just
+includes a wildcard package pattern for every package provided by the bootclasspath_fragment.
+
+If split_packages are specified and a package that is split is not listed then it could lead
+to build failures as it will select monolithic flags that are generated by another
+bootclasspath_fragment to compare against the flags provided by this fragment. The latter
+will obviously not contain those flags and that can cause the comparison and build to fail.
+
+If any package prefixes are specified then any matching packages are removed from the
+signature patterns and replaced with a single recursive package pattern.
+
+It is not strictly necessary to specify either package_prefixes or split_packages as the
+defaults will produce a valid set of signature patterns. However, those patterns may include
+implementation details, e.g. names of implementation classes or packages, which will be
+exported to the sdk snapshot in the signature patterns file. That is something that should be
+avoided where possible. Specifying package_prefixes and split_packages allows those
+implementation details to be excluded from the snapshot.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data">
+        <span class="fixed">&nbsp;</span><b>data </b>
+        <i>list of string</i>, list of files or filegroup modules that provide data that should be installed alongside
+the test
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data_device_bins_32">
+        <span class="fixed">&nbsp;</span><b>data_device_bins_32 </b>
+        <i>list of string</i>, list of device binary modules that should be installed alongside the test
+This property only adds 32bit variants of the dependency
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data_device_bins_64">
+        <span class="fixed">&nbsp;</span><b>data_device_bins_64 </b>
+        <i>list of string</i>, list of device binary modules that should be installed alongside the test
+This property only adds 64bit variants of the dependency
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data_device_bins_both">
+        <span class="fixed">&nbsp;</span><b>data_device_bins_both </b>
+        <i>list of string</i>, list of device binary modules that should be installed alongside the test
+This property adds 64bit AND 32bit variants of the dependency
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data_device_bins_first">
+        <span class="fixed">&nbsp;</span><b>data_device_bins_first </b>
+        <i>list of string</i>, list of device binary modules that should be installed alongside the test
+This property only adds the first variant of the dependency
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data_device_bins_prefer32">
+        <span class="fixed">&nbsp;</span><b>data_device_bins_prefer32 </b>
+        <i>list of string</i>, list of device binary modules that should be installed alongside the test
+This property adds 32bit variants of the dependency if available, or else
+defaults to the 64bit variant
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.data_native_bins">
+        <span class="fixed">&nbsp;</span><b>data_native_bins </b>
+        <i>list of string</i>, list of native binary modules that should be installed alongside the test
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.debug_ramdisk">
+        <span class="fixed">&nbsp;</span><b>debug_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to debug ramdisk
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.default_dev_cert">
+        <span class="fixed">&nbsp;</span><b>default_dev_cert </b>
+        <i>bool</i>, Sign with the default system dev certificate. Must be used judiciously. Most imported apps
+need to either specify a specific certificate or be presigned.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.default_to_stubs">
+        <span class="fixed">&nbsp;</span><b>default_to_stubs </b>
+        <i>bool</i>, Determines if the stubs are preferred over the implementation library
+for linking, even when the client doesn&#39;t specify sdk_version. When this
+is set to true, such clients are provided with the widest API surface that
+this lib provides. Note however that this option doesn&#39;t affect the clients
+that are in the same APEX as this library. In that case, the clients are
+always linked with the implementation library. Default is false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.defaults_visibility">
+        <span class="fixed">&nbsp;</span><b>defaults_visibility </b>
+        <i>list of string</i>, Controls the visibility of the defaults module itself.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_common_data">
+        <span class="fixed">&nbsp;</span><b>device_common_data </b>
+        <i>list of string</i>, Same as data, but will add dependencies on modules using the device&#39;s os variation and
+the common arch variation. Useful for a host test that wants to embed a module built for
+device.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_common_java_resources">
+        <span class="fixed">&nbsp;</span><b>device_common_java_resources </b>
+        <i>configurable list of string</i>, Same as java_resources, but modules added here will use the device variant. Can be useful
+for making a host test that tests the contents of a device built app.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_first_data">
+        <span class="fixed">&nbsp;</span><b>device_first_data </b>
+        <i>list of string</i>, same as data, but adds dependencies using the device&#39;s os variation and the device&#39;s first
+architecture&#39;s variation. Can be used to add a module built for device to the data of a
+host test.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_first_java_resources">
+        <span class="fixed">&nbsp;</span><b>device_first_java_resources </b>
+        <i>configurable list of string</i>, Same as java_resources, but modules added here will use the device&#39;s os variant and the
+device&#39;s first architecture variant. Can be useful for making a host test that tests the
+contents of a native device built app.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_first_prefer32_data">
+        <span class="fixed">&nbsp;</span><b>device_first_prefer32_data </b>
+        <i>list of string</i>, same as data, but adds dependencies using the device&#39;s os variation and the device&#39;s first
+32-bit architecture&#39;s variation. If a 32-bit arch doesn&#39;t exist for this device, it will use
+a 64 bit arch instead. Can be used to add a module built for device to the data of a
+host test.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.device_specific">
+        <span class="fixed">&nbsp;</span><b>device_specific </b>
+        <i>bool</i>, whether this module is specific to a device, not only for SoC, but also for off-chip
+peripherals. When set to true, it is installed into /odm (or /vendor/odm if odm partition
+does not exist, or /system/vendor/odm if both odm and vendor partitions do not exist).
+This implies `soc_specific:true`.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.dex_preopt">
+        <span class="fixed">&#x2295</span><b>dex_preopt</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, If false, prevent dexpreopting.  Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.app_image">
+        <span class="fixed">&nbsp;</span><b>app_image </b>
+        <i>configurable bool</i>, If true, generate an app image (.art file) for this module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.profile_guided">
+        <span class="fixed">&nbsp;</span><b>profile_guided </b>
+        <i>configurable bool</i>, If true, use a checked-in profile to guide optimization.  Defaults to false unless
+a matching profile is set or a profile is found in PRODUCT_DEX_PREOPT_PROFILE_DIR
+that matches the name of this module, in which case it is defaulted to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.profile">
+        <span class="fixed">&nbsp;</span><b>profile </b>
+        <i>configurable string</i>, If set, provides the path to profile relative to the Android.bp file.  If not set,
+defaults to searching for a file that matches the name of this module in the default
+profile location set by PRODUCT_DEX_PREOPT_PROFILE_DIR, or empty if not found.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enable_profile_rewriting">
+        <span class="fixed">&nbsp;</span><b>enable_profile_rewriting </b>
+        <i>configurable bool</i>, If set to true, r8/d8 will use `profile` as input to generate a new profile that matches
+the optimized dex.
+The new profile will be subsequently used as the profile to dexpreopt the dex file.
+
+</div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.dist">
+        <span class="fixed">&#x2295</span><b>dist</b>
+        <i>Dist</i></div>
+      <div class="collapsible">configuration to distribute output files from this module to the distribution
+directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.targets">
+        <span class="fixed">&nbsp;</span><b>targets </b>
+        <i>list of string</i>, Copy the output of this module to the $DIST_DIR when `dist` is specified on the
+command line and any of these targets are also on the command line, or otherwise
+built
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dest">
+        <span class="fixed">&nbsp;</span><b>dest </b>
+        <i>string</i>, The name of the output artifact. This defaults to the basename of the output of
+the module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dir">
+        <span class="fixed">&nbsp;</span><b>dir </b>
+        <i>string</i>, The directory within the dist directory to store the artifact. Defaults to the
+top level directory (&#34;&#34;).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.suffix">
+        <span class="fixed">&nbsp;</span><b>suffix </b>
+        <i>string</i>, A suffix to add to the artifact file name (before any extension).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.append_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>append_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be appended with _&lt;product name&gt;. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be foo_coral.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.prepend_artifact_with_product">
+        <span class="fixed">&nbsp;</span><b>prepend_artifact_with_product </b>
+        <i>bool</i>, If true, then the artifact file will be prepended with &lt;product name&gt;-. For
+example, if the product is coral and the module is an android_app module
+of name foo, then the artifact would be coral-foo.apk. If false, there is
+no change to the artifact file name.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.tag">
+        <span class="fixed">&nbsp;</span><b>tag </b>
+        <i>string</i>, A string tag to select the OutputFiles associated with the tag.
+
+If no tag is specified then it will select the default dist paths provided
+by the module type. If a tag of &#34;&#34; is specified then it will return the
+default output files provided by the modules, i.e. the result of calling
+OutputFiles(&#34;&#34;).
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dist_group">
+        <span class="fixed">&nbsp;</span><b>dist_group </b>
+        <i>string</i>, The subdirectory for the artifacts that are copied to the dist directory.  If not specified
+then defaults to &#34;unknown&#34;.  Should be set to &#34;android&#34; for anything that should be published
+in the public Android SDK.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dist_stem">
+        <span class="fixed">&nbsp;</span><b>dist_stem </b>
+        <i>string</i>, The stem for the artifacts that are copied to the dist, if not specified
+then defaults to the base module name.
+
+For each scope the following artifacts are copied to the apistubs/&lt;scope&gt;
+directory in the dist.
+* stubs impl jar -&gt; &lt;dist-stem&gt;.jar
+* API specification file -&gt; api/&lt;dist-stem&gt;.txt
+* Removed API specification file -&gt; api/&lt;dist-stem&gt;-removed.txt
+
+Also used to construct the name of the filegroup (created by prebuilt_apis)
+that references the latest released API and remove API specification files.
+* API specification filegroup -&gt; &lt;dist-stem&gt;.api.&lt;scope&gt;.latest
+* Removed API specification filegroup -&gt; &lt;dist-stem&gt;-removed.api.&lt;scope&gt;.latest
+* API incompatibilities baseline filegroup -&gt; &lt;dist-stem&gt;-incompatibilities.api.&lt;scope&gt;.latest
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dists">
+        <span class="fixed">&nbsp;</span><b>dists </b>
+        <i>list of Dist</i>, a list of configurations to distribute output files from this module to the
+distribution directory (default: $OUT/dist, configurable with $DIST_DIR)
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.doctag_files">
+        <span class="fixed">&nbsp;</span><b>doctag_files </b>
+        <i>list of string</i>, Files containing information about supported java doc tags.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dont_merge_manifests">
+        <span class="fixed">&nbsp;</span><b>dont_merge_manifests </b>
+        <i>bool</i>, do not include AndroidManifest from dependent libraries
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.droiddoc_option_files">
+        <span class="fixed">&nbsp;</span><b>droiddoc_option_files </b>
+        <i>list of string</i>, local files that are used within user customized droiddoc options.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.droiddoc_options">
+        <span class="fixed">&nbsp;</span><b>droiddoc_options </b>
+        <i>list of string</i>, additional droiddoc options.
+Available variables for substitution:
+
+<pre>
+
+ $(location &lt;label&gt;): the path to the droiddoc_option_files with name &lt;label&gt;
+
+</pre>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.dxflags">
+        <span class="fixed">&nbsp;</span><b>dxflags </b>
+        <i>list of string</i>, list of module-specific flags that will be used for dex compiles
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.embed_notices">
+        <span class="fixed">&nbsp;</span><b>embed_notices </b>
+        <i>bool</i>, If set, find and merge all NOTICE files that this module and its dependencies have and store
+it in the APK as an asset.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enable_validation">
+        <span class="fixed">&nbsp;</span><b>enable_validation </b>
+        <i>bool</i>, If true, the module runs validation on the API signature files provided
+by the modules passed via api_contributions by checking if the files are
+in sync with the source Java files. However, the environment variable
+DISABLE_STUB_VALIDATION has precedence over this property.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>configurable bool</i>, emit build rules for this module
+
+Disabling a module should only be done for those modules that cannot be built
+in the current environment. Modules that can build in the current environment
+but are not usually required (e.g. superceded by a prebuilt) should not be
+disabled as that will prevent them from being built by the checkbuild target
+and so prevent early detection of changes that have broken those modules.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enforce_default_target_sdk_version">
+        <span class="fixed">&nbsp;</span><b>enforce_default_target_sdk_version </b>
+        <i>bool</i>, It can be set to test the behaviour of default target sdk version.
+Only required when updatable: false. It is an error if updatable: true and this is false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enforce_uses_libs">
+        <span class="fixed">&nbsp;</span><b>enforce_uses_libs </b>
+        <i>bool</i>, If true, the list of uses_libs and optional_uses_libs modules must match the AndroidManifest.xml file.  Defaults
+to true if either uses_libs or optional_uses_libs is set.  Will unconditionally default to true in the future.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.errorprone">
+        <span class="fixed">&#x2295</span><b>errorprone</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.javacflags">
+        <span class="fixed">&nbsp;</span><b>javacflags </b>
+        <i>list of string</i>, List of javac flags that should only be used when running errorprone.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.extra_check_modules">
+        <span class="fixed">&nbsp;</span><b>extra_check_modules </b>
+        <i>list of string</i>, List of java_plugin modules that provide extra errorprone checks.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, This property can be in 3 states. When set to true, errorprone will
+be run during the regular build. When set to false, errorprone will
+never be run. When unset, errorprone will be run when the RUN_ERROR_PRONE
+environment variable is true. Setting this to false will improve build
+performance more than adding -XepDisableAllChecks in javacflags.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_common_srcs">
+        <span class="fixed">&nbsp;</span><b>exclude_common_srcs </b>
+        <i>list of string</i>, list of Kotlin source files that should excluded from the list of common_srcs.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_dirs">
+        <span class="fixed">&nbsp;</span><b>exclude_dirs </b>
+        <i>list of string</i>, List of directories to remove from the jar file(s)
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_files">
+        <span class="fixed">&nbsp;</span><b>exclude_files </b>
+        <i>list of string</i>, List of files to remove from the jar file(s)
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_java_resource_dirs">
+        <span class="fixed">&nbsp;</span><b>exclude_java_resource_dirs </b>
+        <i>list of string</i>, list of directories that should be excluded from java_resource_dirs
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_java_resources">
+        <span class="fixed">&nbsp;</span><b>exclude_java_resources </b>
+        <i>list of string</i>, list of files that should be excluded from java_resources and java_resource_dirs
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_kotlinc_generated_files">
+        <span class="fixed">&nbsp;</span><b>exclude_kotlinc_generated_files </b>
+        <i>bool</i>, Exclude kotlinc generate files: *.kotlin_module, *.kotlin_builtins. Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_uses_libs">
+        <span class="fixed">&nbsp;</span><b>exclude_uses_libs </b>
+        <i>list of string</i>, A list of shared library names to exclude from the classpath of the APK. Adding a library here
+will prevent it from being used when precompiling the APK and prevent it from being implicitly
+added to the APK&#39;s manifest&#39;s &lt;uses-library&gt; elements.
+
+Care must be taken when using this as it could result in runtime errors if the APK actually
+uses classes provided by the library and which are not provided in any other way.
+
+This is primarily intended for use by various CTS tests that check the runtime handling of the
+android.test.base shared library (and related libraries) but which depend on some common
+libraries that depend on the android.test.base library. Without this those tests will end up
+with a &lt;uses-library android:name=&#34;android.test.base&#34;/&gt; in their manifest which would either
+render the tests worthless (as they would be testing the wrong behavior), or would break the
+test altogether by providing access to classes that the tests were not expecting. Those tests
+provide the android.test.base statically and use jarjar to rename them so they do not collide
+with the classes provided by the android.test.base library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.export_package_resources">
+        <span class="fixed">&nbsp;</span><b>export_package_resources </b>
+        <i>bool</i>, If set, create package-export.apk, which other packages can
+use to get PRODUCT-agnostic resource data like IDs and type definitions.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exported_plugins">
+        <span class="fixed">&nbsp;</span><b>exported_plugins </b>
+        <i>list of string</i>, List of modules to export to libraries that directly depend on this library as annotation
+processors.  Note that if the plugins set generates_api: true this will disable the turbine
+optimization on modules that depend on this module, which will reduce parallelism and cause
+more recompilation.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.extract_apk">
+        <span class="fixed">&nbsp;</span><b>extract_apk </b>
+        <i>configurable string</i>, Path of extracted apk which is extracted from prebuilt apk. Use this extracted to import.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.extract_jni">
+        <span class="fixed">&nbsp;</span><b>extract_jni </b>
+        <i>bool</i>, If true, extract JNI libs from AAR archive. These libs will be accessible to android_app modules and
+will be passed transitively through android_libraries to an android_app.
+TODO(b/241138093) evaluate whether we can have this flag default to true for Bazel conversion
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.filename">
+        <span class="fixed">&nbsp;</span><b>filename </b>
+        <i>string</i>, Optional name for the installed app. If unspecified, it is derived from the module name.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.flags_packages">
+        <span class="fixed">&nbsp;</span><b>flags_packages </b>
+        <i>list of string</i>, Names of aconfig_declarations modules that specify aconfig flags that the module depends on.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.fragments">
+        <span class="fixed">&nbsp;</span><b>fragments </b>
+        <i>list of ApexVariantReference</i>, The names of the bootclasspath_fragment modules that form part of this module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.generate_product_characteristics_rro">
+        <span class="fixed">&nbsp;</span><b>generate_product_characteristics_rro </b>
+        <i>bool</i>, If set, create an RRO package which contains only resources having PRODUCT_CHARACTERISTICS
+and install the RRO package to /product partition, instead of passing --product argument
+to aapt2. Default is false.
+Setting this will make this APK identical to all targets, regardless of
+PRODUCT_CHARACTERISTICS.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.generated_srcjars">
+        <span class="fixed">&nbsp;</span><b>generated_srcjars </b>
+        <i>list of *ast.SelectorExpr</i>, Additional srcJars tacked in by GeneratedJavaLibraryModule
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.headers_only">
+        <span class="fixed">&nbsp;</span><b>headers_only </b>
+        <i>bool</i>, If true, then only the headers are built and not the implementation jar.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.hidden_api">
+        <span class="fixed">&#x2295</span><b>hidden_api</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.unsupported">
+        <span class="fixed">&nbsp;</span><b>unsupported </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being unsupported.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.removed">
+        <span class="fixed">&nbsp;</span><b>removed </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being unsupported because it has been
+removed. Any conflicts with other flags are ignored.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.max_target_r_low_priority">
+        <span class="fixed">&nbsp;</span><b>max_target_r_low_priority </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being supported only for
+targetSdkVersion &lt;= R and low priority.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.max_target_q">
+        <span class="fixed">&nbsp;</span><b>max_target_q </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being supported only for
+targetSdkVersion &lt;= Q.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.max_target_p">
+        <span class="fixed">&nbsp;</span><b>max_target_p </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being supported only for
+targetSdkVersion &lt;= P.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.max_target_o_low_priority">
+        <span class="fixed">&nbsp;</span><b>max_target_o_low_priority </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being supported only for
+targetSdkVersion &lt;= O
+and low priority. Any conflicts with other flags are ignored.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.blocked">
+        <span class="fixed">&nbsp;</span><b>blocked </b>
+        <i>list of string</i>, Marks each signature in the referenced files as being blocked.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.unsupported_packages">
+        <span class="fixed">&nbsp;</span><b>unsupported_packages </b>
+        <i>list of string</i>, Marks each signature in every package in the referenced files as being unsupported.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.package_prefixes">
+        <span class="fixed">&nbsp;</span><b>package_prefixes </b>
+        <i>list of string</i>, Contains prefixes of a package hierarchy that is provided solely by this
+bootclasspath_fragment.
+
+This affects the signature patterns file that is used to select the subset of monolithic
+hidden API flags. See split_packages property for more details.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.single_packages">
+        <span class="fixed">&nbsp;</span><b>single_packages </b>
+        <i>list of string</i>, A list of individual packages that are provided solely by this
+bootclasspath_fragment but which cannot be listed in package_prefixes
+because there are sub-packages which are provided by other modules.
+
+This should only be used for legacy packages. New packages should be
+covered by a package prefix.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.split_packages">
+        <span class="fixed">&nbsp;</span><b>split_packages </b>
+        <i>list of string</i>, The list of split packages provided by this bootclasspath_fragment.
+
+A split package is one that contains classes which are provided by multiple
+bootclasspath_fragment modules.
+
+This defaults to &#34;*&#34; - which treats all packages as being split. A module that has no split
+packages must specify an empty list.
+
+This affects the signature patterns file that is generated by a bootclasspath_fragment and
+used to select the subset of monolithic hidden API flags against which the flags generated
+by the bootclasspath_fragment are compared.
+
+The signature patterns file selects the subset of monolithic hidden API flags using a number
+of patterns, i.e.:
+* The qualified name (including package) of an outermost class, e.g. java/lang/Character.
+<pre>
+
+  This selects all the flags for all the members of this class and any nested classes.
+</pre>
+* A package wildcard, e.g. java/lang/*. This selects all the flags for all the members of all
+<pre>
+
+  the classes in this package (but not in sub-packages).
+</pre>
+* A recursive package wildcard, e.g. java/**. This selects all the flags for all the members
+<pre>
+
+  of all the classes in this package and sub-packages.
+
+</pre>
+The signature patterns file is constructed as follows:
+* All the signatures are retrieved from the all-flags.csv file.
+* The member and inner class names are removed.
+* If a class is in a split package then that is kept, otherwise the class part is removed
+<pre>
+
+  and replaced with a wildcard, i.e. *.
+</pre>
+* If a package matches a package prefix then the package is removed.
+* All the package prefixes are added with a recursive wildcard appended to each, i.e. **.
+* The resulting patterns are sorted.
+
+So, by default (i.e. without specifying any package_prefixes or split_packages) the signature
+patterns is a list of class names, because there are no package packages and all packages are
+assumed to be split.
+
+If any split packages are specified then only those packages are treated as split and all
+other packages are treated as belonging solely to the bootclasspath_fragment and so they use
+wildcard package patterns.
+
+So, if an empty list of split packages is specified then the signature patterns file just
+includes a wildcard package pattern for every package provided by the bootclasspath_fragment.
+
+If split_packages are specified and a package that is split is not listed then it could lead
+to build failures as it will select monolithic flags that are generated by another
+bootclasspath_fragment to compare against the flags provided by this fragment. The latter
+will obviously not contain those flags and that can cause the comparison and build to fail.
+
+If any package prefixes are specified then any matching packages are removed from the
+signature patterns and replaced with a single recursive package pattern.
+
+It is not strictly necessary to specify either package_prefixes or split_packages as the
+defaults will produce a valid set of signature patterns. However, those patterns may include
+implementation details, e.g. names of implementation classes or packages, which will be
+exported to the sdk snapshot in the signature patterns file. That is something that should be
+avoided where possible. Specifying package_prefixes and split_packages allows those
+implementation details to be excluded from the snapshot.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.hiddenapi_additional_annotations">
+        <span class="fixed">&nbsp;</span><b>hiddenapi_additional_annotations </b>
+        <i>list of string</i>, A list of java_library instances that provide additional hiddenapi annotations for the library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.host_common_data">
+        <span class="fixed">&nbsp;</span><b>host_common_data </b>
+        <i>list of string</i>, Same as data, but will add dependencies on modules using the host&#39;s os variation and
+the common arch variation. Useful for a device test that wants to depend on a host
+module, for example to include a custom Tradefed test runner.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.host_required">
+        <span class="fixed">&nbsp;</span><b>host_required </b>
+        <i>list of string</i>, names of other modules to install on host if this module is installed
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.hostdex">
+        <span class="fixed">&nbsp;</span><b>hostdex </b>
+        <i>bool</i>, If true, export a copy of the module as a -hostdex module for host testing.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.image_name">
+        <span class="fixed">&nbsp;</span><b>image_name </b>
+        <i>string</i>, The name of the image this represents.
+
+If specified then it must be one of &#34;art&#34; or &#34;boot&#34;.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.impl_library_visibility">
+        <span class="fixed">&nbsp;</span><b>impl_library_visibility </b>
+        <i>list of string</i>, Visibility for impl library module. If not specified then defaults to the
+visibility property.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.impl_only_libs">
+        <span class="fixed">&nbsp;</span><b>impl_only_libs </b>
+        <i>list of string</i>, List of Java libraries that will be in the classpath when building the implementation lib
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.impl_only_static_libs">
+        <span class="fixed">&nbsp;</span><b>impl_only_static_libs </b>
+        <i>list of string</i>, List of Java libraries that will included in the implementation lib.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.include_srcs">
+        <span class="fixed">&nbsp;</span><b>include_srcs </b>
+        <i>bool</i>, If set to true, include sources used to compile the module in to the final jar
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.init_rc">
+        <span class="fixed">&nbsp;</span><b>init_rc </b>
+        <i>configurable list of string</i>, init.rc files to be installed if this module is installed
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.inst_package_name">
+        <span class="fixed">&nbsp;</span><b>inst_package_name </b>
+        <i>string</i>, Specify the package name of this test module.
+This will be set to the test Context&#39;s package name.
+(i.e. Instrumentation.getContext().getPackageName())
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.inst_resource_apk">
+        <span class="fixed">&nbsp;</span><b>inst_resource_apk </b>
+        <i>string</i>, Specify another android_app module here to copy it to the test directory, so that
+the ravenwood test can access it. This APK will be loaded as resources of the test
+instrumentation app itself.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.installable">
+        <span class="fixed">&nbsp;</span><b>installable </b>
+        <i>bool</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.instrumentation_for">
+        <span class="fixed">&nbsp;</span><b>instrumentation_for </b>
+        <i>string</i>, The name of the android_app module that the tests will run against.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.instrumentation_target_package">
+        <span class="fixed">&nbsp;</span><b>instrumentation_target_package </b>
+        <i>string</i>, If specified, the instrumentation target package name in the manifest is overwritten by it.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.is_stubs_module">
+        <span class="fixed">&nbsp;</span><b>is_stubs_module </b>
+        <i>bool</i>, Property signifying whether the module compiles stubs or not.
+Should be set to true when srcs of this module are stub files.
+This property does not need to be set to true when the module depends on
+the stubs via libs, but should be set to true when the module depends on
+the stubs via static libs.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.jacoco">
+        <span class="fixed">&#x2295</span><b>jacoco</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.include_filter">
+        <span class="fixed">&nbsp;</span><b>include_filter </b>
+        <i>list of string</i>, List of classes to include for instrumentation with jacoco to collect coverage
+information at runtime when building with coverage enabled.  If unset defaults to all
+classes.
+Supports &#39;*&#39; as the last character of an entry in the list as a wildcard match.
+If preceded by &#39;.&#39; it matches all classes in the package and subpackages, otherwise
+it matches classes in the package that have the class name as a prefix.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude_filter">
+        <span class="fixed">&nbsp;</span><b>exclude_filter </b>
+        <i>list of string</i>, List of classes to exclude from instrumentation with jacoco to collect coverage
+information at runtime when building with coverage enabled.  Overrides classes selected
+by the include_filter property.
+Supports &#39;*&#39; as the last character of an entry in the list as a wildcard match.
+If preceded by &#39;.&#39; it matches all classes in the package and subpackages, otherwise
+it matches classes in the package that have the class name as a prefix.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jarjar_prefix">
+        <span class="fixed">&nbsp;</span><b>jarjar_prefix </b>
+        <i>string</i>, if not blank, used as prefix to generate repackage rule
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jarjar_rename">
+        <span class="fixed">&nbsp;</span><b>jarjar_rename </b>
+        <i>list of string</i>, java class names to rename with jarjar when a reverse dependency has a jarjar_prefix
+property.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jarjar_rules">
+        <span class="fixed">&nbsp;</span><b>jarjar_rules </b>
+        <i>string</i>, if not blank, run jarjar using the specified rules file
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jarjar_shards">
+        <span class="fixed">&nbsp;</span><b>jarjar_shards </b>
+        <i>configurable string</i>, Number of shards for jarjar. It needs to be an integer represented as a string.
+TODO(b/383559945) change it to int, once Configurable supports the type.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jars">
+        <span class="fixed">&nbsp;</span><b>jars </b>
+        <i>list of string</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.java_resource_dirs">
+        <span class="fixed">&nbsp;</span><b>java_resource_dirs </b>
+        <i>list of string</i>, list of directories containing Java resources
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.java_resources">
+        <span class="fixed">&nbsp;</span><b>java_resources </b>
+        <i>configurable list of string</i>, list of files to use as Java resources
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.java_version">
+        <span class="fixed">&nbsp;</span><b>java_version </b>
+        <i>string</i>, If not blank, set the java version passed to javac as -source and -target
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.javac_shard_size">
+        <span class="fixed">&nbsp;</span><b>javac_shard_size </b>
+        <i>int64</i>, The number of Java source entries each Javac instance can process
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.javacflags">
+        <span class="fixed">&nbsp;</span><b>javacflags </b>
+        <i>list of string</i>, List of flags to be passed to the javac compiler to generate jar file
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jetifier">
+        <span class="fixed">&nbsp;</span><b>jetifier </b>
+        <i>bool</i>, if set to true, run Jetifier against .jar file. Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jni_libs">
+        <span class="fixed">&nbsp;</span><b>jni_libs </b>
+        <i>configurable list of string</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jni_uses_platform_apis">
+        <span class="fixed">&nbsp;</span><b>jni_uses_platform_apis </b>
+        <i>bool</i>, if true, use JNI libraries that link against platform APIs even if this module sets
+sdk_version.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.jni_uses_sdk_apis">
+        <span class="fixed">&nbsp;</span><b>jni_uses_sdk_apis </b>
+        <i>bool</i>, if true, use JNI libraries that link against SDK APIs even if this module does not set
+sdk_version.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.kotlin_lang_version">
+        <span class="fixed">&nbsp;</span><b>kotlin_lang_version </b>
+        <i>string</i>, Kotlin language version to target. Currently only 1.9 and 2 are supported.
+See kotlinc&#39;s `-language-version` flag.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.kotlin_plugins">
+        <span class="fixed">&nbsp;</span><b>kotlin_plugins </b>
+        <i>list of string</i>, List of modules to use as kotlin plugin
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.kotlincflags">
+        <span class="fixed">&nbsp;</span><b>kotlincflags </b>
+        <i>list of string</i>, list of module-specific flags that will be used for kotlinc compiles
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.libs">
+        <span class="fixed">&nbsp;</span><b>libs </b>
+        <i>list of string</i>, List of shared java libs that this module has dependencies to
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.licenses">
+        <span class="fixed">&nbsp;</span><b>licenses </b>
+        <i>list of string</i>, Describes the licenses applicable to this module. Must reference license modules.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.lineage">
+        <span class="fixed">&nbsp;</span><b>lineage </b>
+        <i>string</i>, Name of the signing certificate lineage file.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.lint">
+        <span class="fixed">&#x2295</span><b>lint</b>
+        <i></i></div>
+      <div class="collapsible">Controls for running Android Lint on the module.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, If true, run Android Lint on the module.  Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.flags">
+        <span class="fixed">&nbsp;</span><b>flags </b>
+        <i>list of string</i>, Flags to pass to the Android Lint tool.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.fatal_checks">
+        <span class="fixed">&nbsp;</span><b>fatal_checks </b>
+        <i>list of string</i>, Checks that should be treated as fatal.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.error_checks">
+        <span class="fixed">&nbsp;</span><b>error_checks </b>
+        <i>list of string</i>, Checks that should be treated as errors.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.warning_checks">
+        <span class="fixed">&nbsp;</span><b>warning_checks </b>
+        <i>list of string</i>, Checks that should be treated as warnings.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.disabled_checks">
+        <span class="fixed">&nbsp;</span><b>disabled_checks </b>
+        <i>list of string</i>, Checks that should be skipped.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.extra_check_modules">
+        <span class="fixed">&nbsp;</span><b>extra_check_modules </b>
+        <i>list of string</i>, Modules that provide extra lint checks
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.baseline_filename">
+        <span class="fixed">&nbsp;</span><b>baseline_filename </b>
+        <i>string</i>, The lint baseline file to use. If specified, lint warnings listed in this file will be
+suppressed during lint checks.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.strict_updatability_linting">
+        <span class="fixed">&nbsp;</span><b>strict_updatability_linting </b>
+        <i>bool</i>, If true, baselining updatability lint checks (e.g. NewApi) is prohibited. Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.test">
+        <span class="fixed">&nbsp;</span><b>test </b>
+        <i>bool</i>, Treat the code in this module as test code for @VisibleForTesting enforcement.
+This will be true by default for test module types, false otherwise.
+If soong gets support for testonly, this flag should be replaced with that.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.suppress_exit_code">
+        <span class="fixed">&nbsp;</span><b>suppress_exit_code </b>
+        <i>bool</i>, Whether to ignore the exit code of Android lint. This is the --exit_code
+option. Defaults to false.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.logging_parent">
+        <span class="fixed">&nbsp;</span><b>logging_parent </b>
+        <i>string</i>, the logging parent of this app.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.main_dex_rules">
+        <span class="fixed">&nbsp;</span><b>main_dex_rules </b>
+        <i>list of string</i>, A list of files containing rules that specify the classes to keep in the main dex file.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.mainline_package_name">
+        <span class="fixed">&nbsp;</span><b>mainline_package_name </b>
+        <i>string</i>, If specified, the mainline module package name in the test config is overwritten by it.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.manifest">
+        <span class="fixed">&nbsp;</span><b>manifest </b>
+        <i>string</i>, manifest file to be included in resulting jar
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.manifest_values">
+        <span class="fixed">&#x2295</span><b>manifest_values</b>
+        <i>Manifest_values</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.applicationId">
+        <span class="fixed">&nbsp;</span><b>applicationId </b>
+        <i>string</i>, Overrides the value of package_name in the manifest
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.max_device_sdk">
+        <span class="fixed">&nbsp;</span><b>max_device_sdk </b>
+        <i>string</i>, Indicates that PackageManager should ignore this shared library if the
+platform is above the version indicated in this attribute.
+
+This means that the device won&#39;t recognise this library as installed.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.max_sdk_version">
+        <span class="fixed">&nbsp;</span><b>max_sdk_version </b>
+        <i>string</i>, if not blank, set the maximum version of the sdk that the compiled artifacts will run against.
+Defaults to empty string &#34;&#34;. See sdk_version for possible values.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.merge_annotations_dirs">
+        <span class="fixed">&nbsp;</span><b>merge_annotations_dirs </b>
+        <i>list of string</i>, a list of top-level directories containing files to merge qualifier annotations
+(i.e. those intended to be included in the stubs written) from.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.merge_inclusion_annotations_dirs">
+        <span class="fixed">&nbsp;</span><b>merge_inclusion_annotations_dirs </b>
+        <i>list of string</i>, a list of top-level directories containing Java stub files to merge show/hide annotations from.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.min_device_sdk">
+        <span class="fixed">&nbsp;</span><b>min_device_sdk </b>
+        <i>string</i>, Indicates that PackageManager should ignore this shared library if the
+platform is below the version indicated in this attribute.
+
+This means that the device won&#39;t recognise this library as installed.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.min_sdk_version">
+        <span class="fixed">&nbsp;</span><b>min_sdk_version </b>
+        <i>string</i>, if not blank, set the minimum version of the sdk that the compiled artifacts will run against.
+Defaults to sdk_version if not set. See sdk_version for possible values.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.module_lib">
+        <span class="fixed">&#x2295</span><b>module_lib</b>
+        <i>ApiScopeProperties</i></div>
+      <div class="collapsible">The properties specific to the module-lib api scope
+
+Unless explicitly specified by using module_lib.enabled the module_lib api
+scope is disabled by default.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, Indicates whether the api surface is generated.
+
+If this is set for any scope then all scopes must explicitly specify if they
+are enabled. This is to prevent new usages from depending on legacy behavior.
+
+Otherwise, if this is not set for any scope then the default  behavior is
+scope specific so please refer to the scope specific property documentation.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.sdk_version">
+        <span class="fixed">&nbsp;</span><b>sdk_version </b>
+        <i>string</i>, The sdk_version to use for building the stubs.
+
+If not specified then it will use an sdk_version determined as follows:
+
+1) If the sdk_version specified on the java_sdk_library is none then this
+will be none. This is used for java_sdk_library instances that are used
+to create stubs that contribute to the core_current sdk version.
+2) Otherwise, it is assumed that this library extends but does not
+contribute directly to a specific sdk_version and so this uses the
+sdk_version appropriate for the api scope. e.g. public will use
+sdk_version: current, system will use sdk_version: system_current, etc.
+
+This does not affect the sdk_version used for either generating the stubs source
+or the API file. They both have to use the same sdk_version as is used for
+compiling the implementation library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.libs">
+        <span class="fixed">&nbsp;</span><b>libs </b>
+        <i>list of string</i>, Extra libs used when compiling stubs for this scope.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_surface">
+        <span class="fixed">&nbsp;</span><b>api_surface </b>
+        <i>string</i>, Name to override the api_surface that is passed down to droidstubs.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.multilib">
+        <span class="fixed">&nbsp;</span><b>multilib </b>
+        <i>interface</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.native_bridge_supported">
+        <span class="fixed">&nbsp;</span><b>native_bridge_supported </b>
+        <i>bool</i>, Whether this module is built for non-native architectures (also known as native bridge binary)
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.no_dex_container">
+        <span class="fixed">&nbsp;</span><b>no_dex_container </b>
+        <i>bool</i>, Disable dex container (also known as &#34;multi-dex&#34;).
+This may be necessary as a temporary workaround to mask toolchain bugs (see b/341652226).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.no_dist">
+        <span class="fixed">&nbsp;</span><b>no_dist </b>
+        <i>bool</i>, If set to true then don&#39;t create dist rules.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.no_full_install">
+        <span class="fixed">&nbsp;</span><b>no_full_install </b>
+        <i>bool</i>, When set to true, this module is not installed to the full install path (ex: under
+out/target/product/&lt;name&gt;/&lt;partition&gt;). It can be installed only to the packaging
+modules like android_filesystem.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.odm_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>odm_dlkm_specific </b>
+        <i>bool</i>, Install to partition odm_dlkm when set to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.on_bootclasspath_before">
+        <span class="fixed">&nbsp;</span><b>on_bootclasspath_before </b>
+        <i>string</i>, Signals that this shared library was part of the bootclasspath before
+(but not including) the version indicated in this attribute.
+
+The system will automatically add a &lt;uses-library&gt; tag with this library to
+apps that target any SDK less than the version indicated in this attribute.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.on_bootclasspath_since">
+        <span class="fixed">&nbsp;</span><b>on_bootclasspath_since </b>
+        <i>string</i>, Signals that this shared library is part of the bootclasspath starting
+on the version indicated in this attribute.
+
+This will make platforms at this level and above to ignore
+&lt;uses-library&gt; tags with this library name because the library is already
+available
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.openjdk9">
+        <span class="fixed">&#x2295</span><b>openjdk9</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&nbsp;</span><b>srcs </b>
+        <i>list of string</i>, List of source files that should only be used when passing -source 1.9 or higher
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.javacflags">
+        <span class="fixed">&nbsp;</span><b>javacflags </b>
+        <i>list of string</i>, List of javac flags that should only be used when passing -source 1.9 or higher
+
+</div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.optimize">
+        <span class="fixed">&#x2295</span><b>optimize</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, If false, disable all optimization.  Defaults to true for android_app and
+android_test_helper_app modules, false for android_test, java_library, and java_test modules.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.d8_on_eng">
+        <span class="fixed">&nbsp;</span><b>d8_on_eng </b>
+        <i>bool</i>, If true, then `d8` will be used on eng builds instead of `r8`, even though
+optimize.enabled is true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.ignore_library_extends_program">
+        <span class="fixed">&nbsp;</span><b>ignore_library_extends_program </b>
+        <i>bool</i>, Whether to allow that library classes inherit from program classes.
+Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.ignore_warnings">
+        <span class="fixed">&nbsp;</span><b>ignore_warnings </b>
+        <i>bool</i>, Whether to continue building even if warnings are emitted.  Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.keep_runtime_invisible_annotations">
+        <span class="fixed">&nbsp;</span><b>keep_runtime_invisible_annotations </b>
+        <i>bool</i>, Whether runtime invisible annotations should be kept by R8. Defaults to false.
+This is equivalent to:
+<pre>
+
+  -keepattributes RuntimeInvisibleAnnotations,
+                  RuntimeInvisibleParameterAnnotations,
+                  RuntimeInvisibleTypeAnnotations
+</pre>
+This is only applicable when RELEASE_R8_ONLY_RUNTIME_VISIBLE_ANNOTATIONS is
+enabled and will be used to migrate away from keeping runtime invisible
+annotations (b/387958004).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.proguard_compatibility">
+        <span class="fixed">&nbsp;</span><b>proguard_compatibility </b>
+        <i>bool</i>, If true, runs R8 in Proguard compatibility mode, otherwise runs R8 in full mode.
+Defaults to false for apps and tests, true for libraries.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.protect_api_surface">
+        <span class="fixed">&nbsp;</span><b>protect_api_surface </b>
+        <i>bool</i>, If true, R8 will not add public or protected members (fields or methods) to
+the API surface of the compilation unit, i.e., classes that are kept or
+have kept subclasses will not expose any members added by R8 for internal
+use. That includes renamed members if obfuscation is enabled.
+This should only be used for building targets that go on the bootclasspath.
+Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.shrink">
+        <span class="fixed">&nbsp;</span><b>shrink </b>
+        <i>bool</i>, If true, optimize for size by removing unused code.  Defaults to true for apps,
+false for libraries and tests.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.optimize">
+        <span class="fixed">&nbsp;</span><b>optimize </b>
+        <i>bool</i>, If true, optimize bytecode.  Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.obfuscate">
+        <span class="fixed">&nbsp;</span><b>obfuscate </b>
+        <i>bool</i>, If true, obfuscate bytecode.  Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.no_aapt_flags">
+        <span class="fixed">&nbsp;</span><b>no_aapt_flags </b>
+        <i>bool</i>, If true, do not use the flag files generated by aapt that automatically keep
+classes referenced by the app manifest.  Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.shrink_resources">
+        <span class="fixed">&nbsp;</span><b>shrink_resources </b>
+        <i>bool</i>, If true, optimize for size by removing unused resources. Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.optimized_shrink_resources">
+        <span class="fixed">&nbsp;</span><b>optimized_shrink_resources </b>
+        <i>bool</i>, If true, use optimized resource shrinking in R8, overriding the
+Shrink_resources setting. Defaults to false.
+Optimized shrinking means that R8 will trace and treeshake resources together with code
+and apply additional optimizations. This implies non final fields in the R classes.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.proguard_flags">
+        <span class="fixed">&nbsp;</span><b>proguard_flags </b>
+        <i>list of string</i>, Flags to pass to proguard.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.proguard_flags_files">
+        <span class="fixed">&nbsp;</span><b>proguard_flags_files </b>
+        <i>list of string</i>, Specifies the locations of files containing proguard flags.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.export_proguard_flags_files">
+        <span class="fixed">&nbsp;</span><b>export_proguard_flags_files </b>
+        <i>bool</i>, If true, transitive reverse dependencies of this module will have this
+module&#39;s proguard spec appended to their optimization action
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.exclude">
+        <span class="fixed">&nbsp;</span><b>exclude </b>
+        <i>string</i>, Path to a file containing a list of class names that should not be compiled using R8.
+These classes will be compiled by D8 similar to when Optimize.Enabled is false.
+
+Example:
+
+<pre>
+
+  r8.exclude:
+  com.example.Foo
+  com.example.Bar
+  com.example.Bar$Baz
+
+</pre>
+By default all classes are compiled using R8 when Optimize.Enabled is set.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.trace_references_from">
+        <span class="fixed">&nbsp;</span><b>trace_references_from </b>
+        <i>configurable list of string</i>, Optional list of downstream (Java) libraries from which to trace and preserve references
+when optimizing. Note that this requires that the source reference does *not* have
+a strict lib dependency on this target; dependencies should be on intermediate targets
+statically linked into this target, e.g., if A references B, and we want to trace and
+keep references from A when optimizing B, you would create an intermediate B.impl (
+containing all static code), have A depend on `B.impl` via libs, and set
+`trace_references_from: [&#34;A&#34;]` on B.
+
+Also note that these are *not* inherited across targets, they must be specified at the
+top-level target that is optimized.
+
+TODO(b/212737576): Handle this implicitly using bottom-up deps mutation and implicit
+creation of a proxy `.impl` library.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.optional_uses_libs">
+        <span class="fixed">&nbsp;</span><b>optional_uses_libs </b>
+        <i>configurable list of string</i>, A list of shared library modules that will be listed in uses-library tags in the AndroidManifest.xml file with
+required=false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.overrides">
+        <span class="fixed">&nbsp;</span><b>overrides </b>
+        <i>list of string</i>, Names of modules to be overridden. Listed modules can only be other overlays
+(in Make or Soong).
+This does not completely prevent installation of the overridden overlays, but if both
+overlays would be installed by default (in PRODUCT_PACKAGES) the other overlay will be removed
+from PRODUCT_PACKAGES.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.owner">
+        <span class="fixed">&nbsp;</span><b>owner </b>
+        <i>string</i>, vendor who owns this module
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.package_name">
+        <span class="fixed">&nbsp;</span><b>package_name </b>
+        <i>string</i>, Specify the package name of the test target apk.
+This will be set to the target Context&#39;s package name.
+(i.e. Instrumentation.getTargetContext().getPackageName())
+If this is omitted, Package_name will be used.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.package_splits">
+        <span class="fixed">&nbsp;</span><b>package_splits </b>
+        <i>list of string</i>, list of resource labels to generate individual resource packages
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.patch_module">
+        <span class="fixed">&nbsp;</span><b>patch_module </b>
+        <i>string</i>, When compiling language level 9+ .java code in packages that are part of
+a system module, patch_module names the module that your sources and
+dependencies should be patched into. The Android runtime currently
+doesn&#39;t implement the JEP 261 module system so this option is only
+supported at compile time. It should only be needed to compile tests in
+packages that exist in libcore and which are inconvenient to move
+elsewhere.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.per_testcase_directory">
+        <span class="fixed">&nbsp;</span><b>per_testcase_directory </b>
+        <i>bool</i>, Install the test into a folder named for the module in all test suites.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.permitted_packages">
+        <span class="fixed">&nbsp;</span><b>permitted_packages </b>
+        <i>list of string</i>, If not empty, classes are restricted to the specified packages and their sub-packages.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.platform_apis">
+        <span class="fixed">&nbsp;</span><b>platform_apis </b>
+        <i>bool</i>, Whether to compile against the platform APIs instead of an SDK.
+If true, then sdk_version must be empty. The value of this field
+is ignored when module&#39;s type isn&#39;t android_app, android_test, or android_test_helper_app.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.plugins">
+        <span class="fixed">&nbsp;</span><b>plugins </b>
+        <i>list of string</i>, List of modules to use as annotation processors
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.prebuilt_info">
+        <span class="fixed">&nbsp;</span><b>prebuilt_info </b>
+        <i>string</i>, Path to the .prebuilt_info file of the prebuilt app.
+In case of mainline modules, the .prebuilt_info file contains the build_id that was used
+to generate the prebuilt.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.preprocessed">
+        <span class="fixed">&nbsp;</span><b>preprocessed </b>
+        <i>bool</i>, Whether the prebuilt apk can be installed without additional processing. Default is false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.presigned">
+        <span class="fixed">&nbsp;</span><b>presigned </b>
+        <i>bool</i>, Set this flag to true if the prebuilt apk is already signed. The certificate property must not
+be set for presigned modules.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.previous_api">
+        <span class="fixed">&nbsp;</span><b>previous_api </b>
+        <i>string</i>, Version of previously released API file for compatibility check.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.privapp_allowlist">
+        <span class="fixed">&nbsp;</span><b>privapp_allowlist </b>
+        <i>string</i>, Specifies the file that contains the allowlist for this app.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.privileged">
+        <span class="fixed">&nbsp;</span><b>privileged </b>
+        <i>bool</i>, Specifies that this app should be installed to the priv-app directory,
+where the system will grant it additional privileges not available to
+normal apps.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.product_specific">
+        <span class="fixed">&nbsp;</span><b>product_specific </b>
+        <i>bool</i>, whether this module is specific to a software configuration of a product (e.g. country,
+network operator, etc). When set to true, it is installed into /product (or
+/system/product if product partition does not exist).
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.arc">
+        <span class="fixed">&#x2295</span><b>product_variables.arc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.exclude_srcs">
+        <span class="fixed">&#x2295</span><b>exclude_srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.build_from_text_stub">
+        <span class="fixed">&#x2295</span><b>product_variables.build_from_text_stub</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.debuggable">
+        <span class="fixed">&#x2295</span><b>product_variables.debuggable</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.apk">
+        <span class="fixed">&#x2295</span><b>apk</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>*string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.init_rc">
+        <span class="fixed">&#x2295</span><b>init_rc</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.host_required">
+        <span class="fixed">&#x2295</span><b>host_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.target_required">
+        <span class="fixed">&#x2295</span><b>target_required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.jni_libs">
+        <span class="fixed">&#x2295</span><b>jni_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.exclude_srcs">
+        <span class="fixed">&#x2295</span><b>exclude_srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.eng">
+        <span class="fixed">&#x2295</span><b>product_variables.eng</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.optimize.enabled">
+        <span class="fixed">&#x2295</span><b>optimize.enabled</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>*bool</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.aaptflags">
+        <span class="fixed">&#x2295</span><b>aaptflags</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.featuretransformpackagename">
+        <span class="fixed">&#x2295</span><b>product_variables.featuretransformpackagename</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.malloc_low_memory">
+        <span class="fixed">&#x2295</span><b>product_variables.malloc_low_memory</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.static_libs">
+        <span class="fixed">&#x2295</span><b>static_libs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.native_coverage">
+        <span class="fixed">&#x2295</span><b>product_variables.native_coverage</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.srcs">
+        <span class="fixed">&#x2295</span><b>srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.exclude_srcs">
+        <span class="fixed">&#x2295</span><b>exclude_srcs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.platform_sdk_version_or_codename">
+        <span class="fixed">&#x2295</span><b>product_variables.platform_sdk_version_or_codename</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.java_resource_dirs">
+        <span class="fixed">&#x2295</span><b>java_resource_dirs</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.release_aidl_use_unfrozen">
+        <span class="fixed">&#x2295</span><b>product_variables.release_aidl_use_unfrozen</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.vintf_fragment_modules">
+        <span class="fixed">&#x2295</span><b>vintf_fragment_modules</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.selinuxignoreneverallows">
+        <span class="fixed">&#x2295</span><b>product_variables.selinuxignoreneverallows</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.required">
+        <span class="fixed">&#x2295</span><b>required</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.">
+        <span class="fixed">&nbsp;</span><b> </b>
+        <i>[]string</i></div></div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.product_variables.unbundled_build">
+        <span class="fixed">&#x2295</span><b>product_variables.unbundled_build</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&#x2295</span><b>enabled</b>
+        <i>Configurable[bool]</i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.Configurable[bool]">
+        <span class="fixed">&nbsp;</span><b>Configurable[bool] </b>
+        <i>proptools.Configurable[bool]</i></div></div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.proprietary">
+        <span class="fixed">&nbsp;</span><b>proprietary </b>
+        <i>bool</i>, whether this is a proprietary vendor module, and should be installed into /vendor
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.proto">
+        <span class="fixed">&#x2295</span><b>proto</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.type">
+        <span class="fixed">&nbsp;</span><b>type </b>
+        <i>string</i>, Proto generator type.  C++: full or lite.  Java: micro, nano, stream, or lite.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.plugin">
+        <span class="fixed">&nbsp;</span><b>plugin </b>
+        <i>string</i>, Proto plugin to use as the generator.  Must be a cc_binary_host module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.include_dirs">
+        <span class="fixed">&nbsp;</span><b>include_dirs </b>
+        <i>list of string</i>, list of directories that will be added to the protoc include paths.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.local_include_dirs">
+        <span class="fixed">&nbsp;</span><b>local_include_dirs </b>
+        <i>list of string</i>, list of directories relative to the bp file that will
+be added to the protoc include paths.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.canonical_path_from_root">
+        <span class="fixed">&nbsp;</span><b>canonical_path_from_root </b>
+        <i>bool</i>, whether to identify the proto files from the root of the
+source tree (the original method in Android, useful for
+android-specific protos), or relative from where they were
+specified (useful for external/third party protos).
+
+This defaults to true today, but is expected to default to
+false in the future.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.output_params">
+        <span class="fixed">&nbsp;</span><b>output_params </b>
+        <i>list of string</i>, List of extra options that will be passed to the proto generator.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.provides_uses_lib">
+        <span class="fixed">&nbsp;</span><b>provides_uses_lib </b>
+        <i>string</i>, Optional name of the &lt;uses-library&gt; provided by this module. This is needed for non-SDK
+libraries, because SDK ones are automatically picked up by Soong. The &lt;uses-library&gt; name
+normally is the same as the module name, but there are exceptions.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.public">
+        <span class="fixed">&#x2295</span><b>public</b>
+        <i>ApiScopeProperties</i></div>
+      <div class="collapsible">The properties specific to the public api scope
+
+Unless explicitly specified by using public.enabled the public api scope is
+enabled by default in both legacy and non-legacy mode.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, Indicates whether the api surface is generated.
+
+If this is set for any scope then all scopes must explicitly specify if they
+are enabled. This is to prevent new usages from depending on legacy behavior.
+
+Otherwise, if this is not set for any scope then the default  behavior is
+scope specific so please refer to the scope specific property documentation.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.sdk_version">
+        <span class="fixed">&nbsp;</span><b>sdk_version </b>
+        <i>string</i>, The sdk_version to use for building the stubs.
+
+If not specified then it will use an sdk_version determined as follows:
+
+1) If the sdk_version specified on the java_sdk_library is none then this
+will be none. This is used for java_sdk_library instances that are used
+to create stubs that contribute to the core_current sdk version.
+2) Otherwise, it is assumed that this library extends but does not
+contribute directly to a specific sdk_version and so this uses the
+sdk_version appropriate for the api scope. e.g. public will use
+sdk_version: current, system will use sdk_version: system_current, etc.
+
+This does not affect the sdk_version used for either generating the stubs source
+or the API file. They both have to use the same sdk_version as is used for
+compiling the implementation library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.libs">
+        <span class="fixed">&nbsp;</span><b>libs </b>
+        <i>list of string</i>, Extra libs used when compiling stubs for this scope.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_surface">
+        <span class="fixed">&nbsp;</span><b>api_surface </b>
+        <i>string</i>, Name to override the api_surface that is passed down to droidstubs.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.ramdisk">
+        <span class="fixed">&nbsp;</span><b>ramdisk </b>
+        <i>bool</i>, Whether this module is installed to ramdisk
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.ravenizer">
+        <span class="fixed">&#x2295</span><b>ravenizer</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, If true, enable the &#34;Ravenizer&#34; tool on the output jar.
+&#34;Ravenizer&#34; is a tool for Ravenwood tests, but it can also be enabled on other kinds
+of java targets.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.strip_mockito">
+        <span class="fixed">&nbsp;</span><b>strip_mockito </b>
+        <i>bool</i>, If true, the &#34;Ravenizer&#34; tool will remove all Mockito and DexMaker
+classes from the output jar.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.recovery">
+        <span class="fixed">&nbsp;</span><b>recovery </b>
+        <i>bool</i>, Whether this module is installed to recovery partition
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.relative_install_path">
+        <span class="fixed">&nbsp;</span><b>relative_install_path </b>
+        <i>string</i>, Optional. Install to a subdirectory of the default install path for the module
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.rename_resources_package">
+        <span class="fixed">&nbsp;</span><b>rename_resources_package </b>
+        <i>bool</i>, Whether to rename the package in resources to the override name rather than the base name. Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.replace_max_sdk_version_placeholder">
+        <span class="fixed">&nbsp;</span><b>replace_max_sdk_version_placeholder </b>
+        <i>string</i>, The max sdk version placeholder used to replace maxSdkVersion attributes on permission
+and uses-permission tags in manifest_fixer.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>configurable list of string</i>, names of other modules to install if this module is installed
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.resource_apk">
+        <span class="fixed">&nbsp;</span><b>resource_apk </b>
+        <i>string</i>, Specify another android_app module here to copy it to the test directory, so that
+the ravenwood test can access it. This APK will be loaded as resources of the test
+target app.
+TODO: For now, we simply refer to another android_app module and copy it to the
+test directory. Eventually, android_ravenwood_test should support all the resource
+related properties and build resources from the `res/` directory.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.resource_dirs">
+        <span class="fixed">&nbsp;</span><b>resource_dirs </b>
+        <i>configurable list of string</i>, list of directories relative to the Blueprints file containing
+Android resources.  Defaults to [&#34;res&#34;] if a directory called res exists.
+Set to [] to disable the default.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.resource_libs">
+        <span class="fixed">&nbsp;</span><b>resource_libs </b>
+        <i>list of string</i>, list of android_app modules whose resources are extracted and linked against
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.resource_zips">
+        <span class="fixed">&nbsp;</span><b>resource_zips </b>
+        <i>list of string</i>, list of zip files containing Android resources.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.rotationMinSdkVersion">
+        <span class="fixed">&nbsp;</span><b>rotationMinSdkVersion </b>
+        <i>string</i>, For overriding the --rotation-min-sdk-version property of apksig
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.sdk_version">
+        <span class="fixed">&nbsp;</span><b>sdk_version </b>
+        <i>string</i>, If not blank, set to the version of the sdk to compile against. This
+can be either an API version (e.g. &#34;29&#34; for API level 29 AKA Android 10)
+or special subsets of the current platform, for example &#34;none&#34;, &#34;current&#34;,
+&#34;core&#34;, &#34;system&#34;, &#34;test&#34;. See build/soong/java/sdk.go for the full and
+up-to-date list of possible values.
+Defaults to compiling against the current platform.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.services">
+        <span class="fixed">&nbsp;</span><b>services </b>
+        <i>list of string</i>, List of files to include in the META-INF/services folder of the resulting jar.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.shared_library">
+        <span class="fixed">&nbsp;</span><b>shared_library </b>
+        <i>bool</i>, Specifies whether this module can be used as an Android shared library; defaults
+to true.
+
+An Android shared library is one that can be referenced in a &lt;uses-library&gt; element
+in an AndroidManifest.xml.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.skip_preprocessed_apk_checks">
+        <span class="fixed">&nbsp;</span><b>skip_preprocessed_apk_checks </b>
+        <i>bool</i>, Whether or not to skip checking the preprocessed apk for proper alignment and uncompressed
+JNI libs and dex files. Default is false
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.soc_specific">
+        <span class="fixed">&nbsp;</span><b>soc_specific </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.source_module_name">
+        <span class="fixed">&nbsp;</span><b>source_module_name </b>
+        <i>string</i>, Name of the source soong module that gets shadowed by this prebuilt
+If unspecified, follows the naming convention that the source module of
+the prebuilt is Name() without &#34;prebuilt_&#34; prefix
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.static_kotlin_stdlib">
+        <span class="fixed">&nbsp;</span><b>static_kotlin_stdlib </b>
+        <i>bool</i>, If true, package the kotlin stdlib into the jar.  Defaults to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.static_libs">
+        <span class="fixed">&nbsp;</span><b>static_libs </b>
+        <i>configurable list of string</i>, list of java libraries that will be compiled into the resulting jar
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stem">
+        <span class="fixed">&nbsp;</span><b>stem </b>
+        <i>string</i>, set the name of the output. If not set, `name` is used.
+To override a module with this property set, overriding module might need to set this as well.
+Otherwise, both the overridden and the overriding modules will have the same output name, which
+can cause the duplicate output error.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stl">
+        <span class="fixed">&nbsp;</span><b>stl </b>
+        <i>string</i>, STL library to use for JNI libraries.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.strip_unused_jni_arch">
+        <span class="fixed">&nbsp;</span><b>strip_unused_jni_arch </b>
+        <i>bool</i>, Whether stripping all libraries from unused architectures.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stub_only_libs">
+        <span class="fixed">&nbsp;</span><b>stub_only_libs </b>
+        <i>list of string</i>, List of Java libraries that will be in the classpath when building stubs
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stub_only_static_libs">
+        <span class="fixed">&nbsp;</span><b>stub_only_static_libs </b>
+        <i>list of string</i>, List of Java libraries that will included in stub libraries
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stubs_library_visibility">
+        <span class="fixed">&nbsp;</span><b>stubs_library_visibility </b>
+        <i>list of string</i>, Visibility for stubs library modules. If not specified then defaults to the
+visibility property.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stubs_source_visibility">
+        <span class="fixed">&nbsp;</span><b>stubs_source_visibility </b>
+        <i>list of string</i>, Visibility for stubs source modules. If not specified then defaults to the
+visibility property.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.stubs_type">
+        <span class="fixed">&nbsp;</span><b>stubs_type </b>
+        <i>string</i>, Type of stubs the module should generate. Must be one of &#34;everything&#34;, &#34;runtime&#34; or
+&#34;exportable&#34;. Defaults to &#34;everything&#34;.
+- &#34;everything&#34; stubs include all non-flagged apis and flagged apis, regardless of the state
+of the flag.
+- &#34;runtime&#34; stubs include all non-flagged apis and flagged apis that are ENABLED or
+READ_WRITE, and all other flagged apis are stripped.
+- &#34;exportable&#34; stubs include all non-flagged apis and flagged apis that are ENABLED and
+READ_ONLY, and all other flagged apis are stripped.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.system">
+        <span class="fixed">&#x2295</span><b>system</b>
+        <i>ApiScopeProperties</i></div>
+      <div class="collapsible">The properties specific to the system api scope
+
+In legacy mode the system api scope is enabled by default when sdk_version
+is set to something other than &#34;none&#34;.
+
+In non-legacy mode the system api scope is disabled by default.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, Indicates whether the api surface is generated.
+
+If this is set for any scope then all scopes must explicitly specify if they
+are enabled. This is to prevent new usages from depending on legacy behavior.
+
+Otherwise, if this is not set for any scope then the default  behavior is
+scope specific so please refer to the scope specific property documentation.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.sdk_version">
+        <span class="fixed">&nbsp;</span><b>sdk_version </b>
+        <i>string</i>, The sdk_version to use for building the stubs.
+
+If not specified then it will use an sdk_version determined as follows:
+
+1) If the sdk_version specified on the java_sdk_library is none then this
+will be none. This is used for java_sdk_library instances that are used
+to create stubs that contribute to the core_current sdk version.
+2) Otherwise, it is assumed that this library extends but does not
+contribute directly to a specific sdk_version and so this uses the
+sdk_version appropriate for the api scope. e.g. public will use
+sdk_version: current, system will use sdk_version: system_current, etc.
+
+This does not affect the sdk_version used for either generating the stubs source
+or the API file. They both have to use the same sdk_version as is used for
+compiling the implementation library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.libs">
+        <span class="fixed">&nbsp;</span><b>libs </b>
+        <i>list of string</i>, Extra libs used when compiling stubs for this scope.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_surface">
+        <span class="fixed">&nbsp;</span><b>api_surface </b>
+        <i>string</i>, Name to override the api_surface that is passed down to droidstubs.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.system_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>system_dlkm_specific </b>
+        <i>bool</i>, Install to partition system_dlkm when set to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.system_ext_specific">
+        <span class="fixed">&nbsp;</span><b>system_ext_specific </b>
+        <i>bool</i>, whether this module extends system. When set to true, it is installed into /system_ext
+(or /system/system_ext if system_ext partition does not exist).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.system_modules">
+        <span class="fixed">&nbsp;</span><b>system_modules </b>
+        <i>string</i>, java_system_modules module providing the jar to be added to the
+bootclasspath when compiling the stubs.
+The jar will also be passed to metalava as a classpath to
+generate compilable stubs.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.system_server">
+        <span class="fixed">&#x2295</span><b>system_server</b>
+        <i>ApiScopeProperties</i></div>
+      <div class="collapsible">The properties specific to the system-server api scope
+
+Unless explicitly specified by using system_server.enabled the
+system_server api scope is disabled by default.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, Indicates whether the api surface is generated.
+
+If this is set for any scope then all scopes must explicitly specify if they
+are enabled. This is to prevent new usages from depending on legacy behavior.
+
+Otherwise, if this is not set for any scope then the default  behavior is
+scope specific so please refer to the scope specific property documentation.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.sdk_version">
+        <span class="fixed">&nbsp;</span><b>sdk_version </b>
+        <i>string</i>, The sdk_version to use for building the stubs.
+
+If not specified then it will use an sdk_version determined as follows:
+
+1) If the sdk_version specified on the java_sdk_library is none then this
+will be none. This is used for java_sdk_library instances that are used
+to create stubs that contribute to the core_current sdk version.
+2) Otherwise, it is assumed that this library extends but does not
+contribute directly to a specific sdk_version and so this uses the
+sdk_version appropriate for the api scope. e.g. public will use
+sdk_version: current, system will use sdk_version: system_current, etc.
+
+This does not affect the sdk_version used for either generating the stubs source
+or the API file. They both have to use the same sdk_version as is used for
+compiling the implementation library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.libs">
+        <span class="fixed">&nbsp;</span><b>libs </b>
+        <i>list of string</i>, Extra libs used when compiling stubs for this scope.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_surface">
+        <span class="fixed">&nbsp;</span><b>api_surface </b>
+        <i>string</i>, Name to override the api_surface that is passed down to droidstubs.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.target">
+        <span class="fixed">&nbsp;</span><b>target </b>
+        <i>interface</i>
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.target.android">
+        <span class="fixed">&#x2295</span><b>target.android</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>
+</div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.target.host">
+        <span class="fixed">&#x2295</span><b>target.host</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.compile_multilib">
+        <span class="fixed">&nbsp;</span><b>compile_multilib </b>
+        <i>string</i>
+</div></div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.target.hostdex">
+        <span class="fixed">&#x2295</span><b>target.hostdex</b>
+        <i></i></div>
+      <div class="collapsible">
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.required">
+        <span class="fixed">&nbsp;</span><b>required </b>
+        <i>list of string</i>, Additional required dependencies to add to -hostdex modules.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.target_required">
+        <span class="fixed">&nbsp;</span><b>target_required </b>
+        <i>list of string</i>, names of other modules to install on target if this module is installed
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.target_sdk_version">
+        <span class="fixed">&nbsp;</span><b>target_sdk_version </b>
+        <i>string</i>, if not blank, set the targetSdkVersion in the AndroidManifest.xml.
+Defaults to sdk_version if not set. See sdk_version for possible values.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.team">
+        <span class="fixed">&nbsp;</span><b>team </b>
+        <i>string</i>, The team (defined by the owner/vendor) who owns the property.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.test">
+        <span class="fixed">&#x2295</span><b>test</b>
+        <i>ApiScopeProperties</i></div>
+      <div class="collapsible">The properties specific to the test api scope
+
+In legacy mode the test api scope is enabled by default when sdk_version
+is set to something other than &#34;none&#34;.
+
+In non-legacy mode the test api scope is disabled by default.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.enabled">
+        <span class="fixed">&nbsp;</span><b>enabled </b>
+        <i>bool</i>, Indicates whether the api surface is generated.
+
+If this is set for any scope then all scopes must explicitly specify if they
+are enabled. This is to prevent new usages from depending on legacy behavior.
+
+Otherwise, if this is not set for any scope then the default  behavior is
+scope specific so please refer to the scope specific property documentation.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.sdk_version">
+        <span class="fixed">&nbsp;</span><b>sdk_version </b>
+        <i>string</i>, The sdk_version to use for building the stubs.
+
+If not specified then it will use an sdk_version determined as follows:
+
+1) If the sdk_version specified on the java_sdk_library is none then this
+will be none. This is used for java_sdk_library instances that are used
+to create stubs that contribute to the core_current sdk version.
+2) Otherwise, it is assumed that this library extends but does not
+contribute directly to a specific sdk_version and so this uses the
+sdk_version appropriate for the api scope. e.g. public will use
+sdk_version: current, system will use sdk_version: system_current, etc.
+
+This does not affect the sdk_version used for either generating the stubs source
+or the API file. They both have to use the same sdk_version as is used for
+compiling the implementation library.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.libs">
+        <span class="fixed">&nbsp;</span><b>libs </b>
+        <i>list of string</i>, Extra libs used when compiling stubs for this scope.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.api_surface">
+        <span class="fixed">&nbsp;</span><b>api_surface </b>
+        <i>string</i>, Name to override the api_surface that is passed down to droidstubs.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.test_config">
+        <span class="fixed">&nbsp;</span><b>test_config </b>
+        <i>string</i>, the name of the test configuration (for example &#34;AndroidTest.xml&#34;) that should be
+installed with the module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.test_config_template">
+        <span class="fixed">&nbsp;</span><b>test_config_template </b>
+        <i>string</i>, the name of the test configuration template (for example &#34;AndroidTestTemplate.xml&#34;) that
+should be installed with the module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.test_mainline_modules">
+        <span class="fixed">&nbsp;</span><b>test_mainline_modules </b>
+        <i>list of string</i>, Add parameterized mainline modules to auto generated test config. The options will be
+handled by TradeFed to do downloading and installing the specified modules on the device.
+
+</div>
+    <div class="accordion"  id="mtk_carservice_res_resoverlay_defaults.test_options">
+        <span class="fixed">&#x2295</span><b>test_options</b>
+        <i>TestOptions</i></div>
+      <div class="collapsible">Test options.
+
+ 
+        
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.extra_test_configs">
+        <span class="fixed">&nbsp;</span><b>extra_test_configs </b>
+        <i>list of string</i>, a list of extra test configuration files that should be installed with the module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.tradefed_options">
+        <span class="fixed">&nbsp;</span><b>tradefed_options </b>
+        <i>list of *ast.SelectorExpr</i>, Extra &lt;option&gt; tags to add to the auto generated test xml file. The &#34;key&#34;
+is optional in each of these.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.test_runner_options">
+        <span class="fixed">&nbsp;</span><b>test_runner_options </b>
+        <i>list of *ast.SelectorExpr</i>, Extra &lt;option&gt; tags to add to the auto generated test xml file under the test runner, e.g., AndroidJunitTest.
+The &#34;key&#34; is optional in each of these.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.unit_test">
+        <span class="fixed">&nbsp;</span><b>unit_test </b>
+        <i>bool</i>, If the test is a hostside (no device required) unittest that shall be run
+during presubmit check.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.tags">
+        <span class="fixed">&nbsp;</span><b>tags </b>
+        <i>list of string</i>, Tags provide additional metadata to customize test execution by downstream
+test runners. The tags have no special meaning to Soong.
+
+</div></div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.test_suites">
+        <span class="fixed">&nbsp;</span><b>test_suites </b>
+        <i>list of string</i>, list of compatibility suites (for example &#34;cts&#34;, &#34;vts&#34;) that the module should be
+installed into.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.theme">
+        <span class="fixed">&nbsp;</span><b>theme </b>
+        <i>string</i>, optional theme name. If specified, the overlay package will be applied
+only when the ro.boot.vendor.overlay.theme system property is set to the same value.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.uncompress_dex">
+        <span class="fixed">&nbsp;</span><b>uncompress_dex </b>
+        <i>bool</i>, Keep the data uncompressed. We always need uncompressed dex for execution,
+so this might actually save space by avoiding storing the same data twice.
+This defaults to reasonable value based on module and should not be set.
+It exists only to support ART tests.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.unsafe_ignore_missing_latest_api">
+        <span class="fixed">&nbsp;</span><b>unsafe_ignore_missing_latest_api </b>
+        <i>bool</i>, A compatibility mode that allows historical API-tracking files to not exist.
+Do not use.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.updatable">
+        <span class="fixed">&nbsp;</span><b>updatable </b>
+        <i>bool</i>, Whether this app is considered mainline updatable or not. When set to true, this will enforce
+additional rules to make sure an app can safely be updated. Default is false.
+Prefer using other specific properties if build behaviour must be changed; avoid using this
+flag for anything but neverallow rules (unless the behaviour change is invisible to owners).
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.use_embedded_dex">
+        <span class="fixed">&nbsp;</span><b>use_embedded_dex </b>
+        <i>bool</i>, Store dex files uncompressed in the APK and set the android:useEmbeddedDex=&#34;true&#34; manifest attribute so that
+they are used from inside the APK at runtime.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.use_embedded_native_libs">
+        <span class="fixed">&nbsp;</span><b>use_embedded_native_libs </b>
+        <i>bool</i>, Store native libraries uncompressed in the APK and set the android:extractNativeLibs=&#34;false&#34; manifest
+flag so that they are used from inside the APK at runtime.  Defaults to true for android_test modules unless
+sdk_version or min_sdk_version is set to a version that doesn&#39;t support it (&lt;23), defaults to true for
+android_app modules that are embedded to APEXes, defaults to false for other module types where the native
+libraries are generally preinstalled outside the APK.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.use_generic_config">
+        <span class="fixed">&nbsp;</span><b>use_generic_config </b>
+        <i>bool</i>, Set to true if this module must be generic and does not require product-specific information.
+To be included in the system image, this property must be set to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.use_resource_processor">
+        <span class="fixed">&nbsp;</span><b>use_resource_processor </b>
+        <i>bool</i>, If use_resource_processor is set, use Bazel&#39;s resource processor instead of aapt2 to generate R.class files.
+The resource processor produces more optimal R.class files that only list resources in the package of the
+library that provided them, as opposed to aapt2 which produces R.java files for every package containing
+every resource.  Using the resource processor can provide significant build time speedups, but requires
+fixing the module to use the correct package to reference each resource, and to avoid having any other
+libraries in the tree that use the same package name.  Defaults to false, but will default to true in the
+future.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.use_tools_jar">
+        <span class="fixed">&nbsp;</span><b>use_tools_jar </b>
+        <i>bool</i>, Add host jdk tools.jar to bootclasspath
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.uses_libs">
+        <span class="fixed">&nbsp;</span><b>uses_libs </b>
+        <i>configurable list of string</i>, A list of shared library modules that will be listed in uses-library tags in the AndroidManifest.xml file.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.v4_signature">
+        <span class="fixed">&nbsp;</span><b>v4_signature </b>
+        <i>bool</i>, If true, generate the signature file of APK Signing Scheme V4, along side the signed APK file.
+Defaults to false.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.vendor">
+        <span class="fixed">&nbsp;</span><b>vendor </b>
+        <i>bool</i>, whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+it is installed into /vendor (or /system/vendor if vendor partition does not exist).
+Use `soc_specific` instead for better meaning.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.vendor_dlkm_specific">
+        <span class="fixed">&nbsp;</span><b>vendor_dlkm_specific </b>
+        <i>bool</i>, Install to partition vendor_dlkm when set to true.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.vendor_ramdisk">
+        <span class="fixed">&nbsp;</span><b>vendor_ramdisk </b>
+        <i>bool</i>, Whether this module is installed to vendor ramdisk
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.vintf_fragment_modules">
+        <span class="fixed">&nbsp;</span><b>vintf_fragment_modules </b>
+        <i>configurable list of string</i>, vintf_fragment Modules required from this module.
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.vintf_fragments">
+        <span class="fixed">&nbsp;</span><b>vintf_fragments </b>
+        <i>configurable list of string</i>, VINTF manifest fragments to be installed if this module is installed
+
+</div>
+    <div class="simple" id="mtk_carservice_res_resoverlay_defaults.visibility">
+        <span class="fixed">&nbsp;</span><b>visibility </b>
+        <i>list of string</i>, Controls the visibility of this module to other modules. Allowable values are one or more of
+these formats:
+
+<pre>
+
+ [&#34;//visibility:public&#34;]: Anyone can use this module.
+ [&#34;//visibility:private&#34;]: Only rules in the module&#39;s package (not its subpackages) can use
+     this module.
+ [&#34;//visibility:override&#34;]: Discards any rules inherited from defaults or a creating module.
+     Can only be used at the beginning of a list of visibility rules.
+ [&#34;//some/package:__pkg__&#34;, &#34;//other/package:__pkg__&#34;]: Only modules in some/package and
+     other/package (defined in some/package/*.bp and other/package/*.bp) have access to
+     this module. Note that sub-packages do not have access to the rule; for example,
+     //some/package/foo:bar or //other/package/testing:bla wouldn&#39;t have access. __pkg__
+     is a special module and must be used verbatim. It represents all of the modules in the
+     package.
+ [&#34;//project:__subpackages__&#34;, &#34;//other:__subpackages__&#34;]: Only modules in packages project
+     or other or in one of their sub-packages have access to this module. For example,
+     //project:rule, //project/library:lib or //other/testing/internal:munge are allowed
+     to depend on this rule (but not //independent:evil)
+ [&#34;//project&#34;]: This is shorthand for [&#34;//project:__pkg__&#34;]
+ [&#34;:__subpackages__&#34;]: This is shorthand for [&#34;//project:__subpackages__&#34;] where
+     //project is the module&#39;s package. e.g. using [&#34;:__subpackages__&#34;] in
+     packages/apps/Settings/Android.bp is equivalent to
+     //packages/apps/Settings:__subpackages__.
+ [&#34;//visibility:legacy_public&#34;]: The default visibility, behaves as //visibility:public
+     for now. It is an error if it is used in a module.
+
+</pre>
+If a module does not specify the `visibility` property then it uses the
+`default_visibility` property of the `package` module in the module&#39;s package.
+
+If the `default_visibility` property is not set for the module&#39;s package then
+it will use the `default_visibility` of its closest ancestor package for which
+a `default_visibility` property is specified.
+
+If no `default_visibility` property can be found then the module uses the
+global default of `//visibility:legacy_public`.
+
+The `visibility` property has no effect on a defaults module although it does
+apply to any non-defaults module that uses it. To set the visibility of a
+defaults module, use the `defaults_visibility` property on the defaults module;
+not to be confused with the `default_visibility` property on the package module.
+
+See https://android.googlesource.com/platform/build/soong/+/main/README.md#visibility for
+more details.
+
+</div></div>
+<script>
+  accordions = document.getElementsByClassName('accordion');
+  for (i=0; i < accordions.length; ++i) {
+    accordions[i].addEventListener("click", function() {
+      var panel = this.nextElementSibling;
+      var child = this.firstElementChild;
+      if (panel.style.display === "block") {
+          panel.style.display = "none";
+          child.textContent = '\u2295';
+      } else {
+          panel.style.display = "block";
+          child.textContent = '\u2296';
+      }
+    });
+  }
+</script>
+</body>
